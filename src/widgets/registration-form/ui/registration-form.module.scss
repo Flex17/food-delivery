@@ -1,0 +1,9 @@
+@use "/src/app/styles/variables";
+
+.input_wrapper {
+  margin-bottom: 15px;
+
+  input {
+    width: 100%;
+  }
+}

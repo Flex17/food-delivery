@@ -2,8 +2,10 @@ import { createBrowserRouter, RouteObject } from "react-router-dom";
 import App from "app/app.tsx";
 import { RequireAuth } from "app/layouts/require-auth/require-auth.tsx";
 import { Unauthorized } from "app/layouts/unauthorized/unauthorized.tsx";
-import { Registration } from "pages/registration/ui/registration.tsx";
 import { Authorization } from "pages/authorization";
+import { Registration } from "pages/registration";
+import { Suspense } from "react";
+import { Spinner } from "shared/ui";
 
 const authorizedRoutes: RouteObject[] = [
     {
@@ -14,11 +16,19 @@ const authorizedRoutes: RouteObject[] = [
 const unauthorizedRoutes: RouteObject[] = [
     {
         path: "registration",
-        element: <Registration />,
+        element: (
+            <Suspense fallback={<Spinner />}>
+                <Registration />
+            </Suspense>
+        ),
     },
     {
         path: "authorization",
-        element: <Authorization />,
+        element: (
+            <Suspense fallback={<Spinner />}>
+                <Authorization />
+            </Suspense>
+        ),
     },
 ];
 

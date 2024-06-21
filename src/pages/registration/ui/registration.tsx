@@ -1,9 +1,7 @@
-import { RegistrationForm } from "features/registration";
+import { RegistrationForm } from "widgets/registration-form";
 
-export const Registration = () => {
-    return (
-        <>
-            <RegistrationForm />
-        </>
-    );
+const Registration = () => {
+    return <RegistrationForm />;
 };
+
+export default Registration;

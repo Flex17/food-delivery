@@ -1,1 +1,1 @@
-export { Authorization } from "./authorization.tsx";
+export { Authorization } from "./authorization.lazy.tsx";

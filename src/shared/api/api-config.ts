@@ -9,7 +9,7 @@ import {
 import { redirect } from "react-router-dom";
 import { QueryReturnValue } from "shared/api/types.ts";
 
-export const API_KEY = "AIzaSyB3q_WvA5Xct-kx8vnnVau9Fwp9nBMuh4g";
+// export const API_KEY = "AIzaSyB3q_WvA5Xct-kx8vnnVau9Fwp9nBMuh4g";
 
 export const providesList = <R extends { id: string | number }[], T extends string>(
     resultsWithIds: R | undefined,
@@ -59,7 +59,7 @@ const reauth = async (
             {
                 url: "",
                 params: {
-                    key: API_KEY,
+                    key: import.meta.env.VITE_API_KEY,
                 },
                 body: {
                     grant_type: "refresh_token",
@@ -91,7 +91,7 @@ const reauth = async (
 export const authBaseQuery = fetchBaseQuery({
     baseUrl: "https://identitytoolkit.googleapis.com/v1/",
     paramsSerializer: params => {
-        return Object.entries(Object.assign({}, params, { key: API_KEY }))
+        return Object.entries(Object.assign({}, params, { key: import.meta.env.VITE_API_KEY }))
             .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
             .join("&");
     },
