@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AuthStateI } from "entities/auth/model/types.ts";
+import { IAuthState } from "./types.ts";
 
-const initialState: AuthStateI = {
+const initialState: IAuthState = {
     isAuth: false,
     email: "",
     displayName: "",
@@ -13,6 +13,7 @@ export const authSlice = createSlice({
     initialState,
     selectors: {
         isAuth: state => state.isAuth,
+        localId: state => state.localId,
     },
     reducers: {
         setIsAuth(state, action: PayloadAction<boolean>) {

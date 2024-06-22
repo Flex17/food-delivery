@@ -1,4 +1,4 @@
-export interface AuthStateI {
+export interface IAuthState {
     isAuth: boolean;
     email: string;
     displayName: string;

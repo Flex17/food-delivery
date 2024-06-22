@@ -6,11 +6,12 @@ import { Authorization } from "pages/authorization";
 import { Registration } from "pages/registration";
 import { Suspense } from "react";
 import { Spinner } from "shared/ui";
+import { Menu } from "pages/menu";
 
 const authorizedRoutes: RouteObject[] = [
     {
         path: "/",
-        element: <div>registered</div>,
+        element: <Menu />,
     },
 ];
 
