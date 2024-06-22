@@ -3,6 +3,7 @@ import { useAppSelector } from "app/redux/store.ts";
 import { authSlice } from "entities/auth/model/auth-slice.ts";
 import { Spinner } from "shared/ui";
 import { authAPI } from "entities/auth/api/api.ts";
+import { MainLayout } from "app/layouts/main-layout/main-layout.tsx";
 
 export const RequireAuth = () => {
     const isAuth = useAppSelector(authSlice.selectors.isAuth);
@@ -15,5 +16,11 @@ export const RequireAuth = () => {
         return <Spinner />;
     }
 
-    return isAuth ? <Outlet /> : <Navigate to="/unauthorized/registration" />;
+    return isAuth ? (
+        <MainLayout>
+            <Outlet />
+        </MainLayout>
+    ) : (
+        <Navigate to="/unauthorized/registration" />
+    );
 };

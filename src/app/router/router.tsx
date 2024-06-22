@@ -9,6 +9,7 @@ import { Spinner } from "shared/ui";
 
 const authorizedRoutes: RouteObject[] = [
     {
+        path: "/",
         element: <div>registered</div>,
     },
 ];

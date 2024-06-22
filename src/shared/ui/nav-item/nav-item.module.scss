@@ -1,0 +1,17 @@
+@use "/src/app/styles/variables";
+
+.nav_item, .nav_active {
+  color: variables.$white;
+  font-size: 20px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  padding-bottom: 3px;
+
+  &:hover {
+    border-color: variables.$white;
+  }
+}
+
+.nav_active {
+  border-bottom: 2px solid variables.$white;
+}

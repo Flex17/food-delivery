@@ -1,0 +1,29 @@
+@use "/src/app/styles/variables";
+
+.wrapper {
+  background-color: variables.$dark_green;
+  margin-bottom: 20px;
+  padding: 40px;
+
+  @media (max-width: 1250px) {
+    padding: 20px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_block {
+  display: flex;
+  align-items: center;
+
+  .nav_items {
+    display: flex;
+    gap: 30px;
+    margin-left: 40px;
+    list-style-type: none;
+  }
+}
