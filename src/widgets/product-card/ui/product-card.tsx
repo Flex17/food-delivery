@@ -1,18 +1,15 @@
 import { ICartProduct } from "entities/product";
-import { useTranslation } from "react-i18next";
-import css from "./product-card.module.scss";
 import React from "react";
-import { Button } from "shared/ui";
+import css from "./product-card.module.scss";
 
 interface ProductCardProps {
     product: ICartProduct;
     removeProduct: React.ReactNode;
     addProduct: React.ReactNode;
+    increaseProductQuantity: React.ReactNode;
 }
 
-export const ProductCard = ({ product, addProduct, removeProduct }: ProductCardProps) => {
-    const { t } = useTranslation();
-
+export const ProductCard = ({ product, addProduct, removeProduct, increaseProductQuantity }: ProductCardProps) => {
     const { quantity, product: productData } = product;
     const { img, name, description, price } = productData;
 
@@ -27,15 +24,15 @@ export const ProductCard = ({ product, addProduct, removeProduct }: ProductCardP
             <h4 className={css.name}>{name}</h4>
             <p className={css.description}>{description}</p>
             {quantity > 0 ? (
-                <div>
+                <div className={css.controls_wrapper}>
                     {removeProduct}
-                    <div>
+                    <div className={css.count}>
                         <span>{quantity}</span>
                     </div>
-                    {addProduct}
+                    {increaseProductQuantity}
                 </div>
             ) : (
-                <Button state="default">{t("productCard.toCart")}</Button>
+                addProduct
             )}
         </div>
     );

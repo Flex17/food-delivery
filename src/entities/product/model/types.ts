@@ -18,3 +18,8 @@ export interface IProductsState {
     startAt: number;
     endAt: number;
 }
+
+export interface IOrderProduct {
+    product: IProduct;
+    quantity: number;
+}

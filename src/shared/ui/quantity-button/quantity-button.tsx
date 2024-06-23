@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "classnames";
 import css from "./quantity-button.module.scss";
 
 interface QuantityButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,7 +9,7 @@ interface QuantityButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
 
 export const QuantityButton = ({ children, onClick, ...props }: QuantityButtonProps) => {
     return (
-        <button type="button" onClick={onClick} className={css.wrapper} {...props}>
+        <button type="button" onClick={onClick} className={cx(css.wrapper, props.disabled && css.disabled)} {...props}>
             {children}
         </button>
     );

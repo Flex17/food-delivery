@@ -6,15 +6,17 @@ import { useDynamicProducts } from "pages/menu/libs/useDynamicProducts.ts";
 import { InfoText } from "shared/ui";
 import { ProductCard } from "widgets/product-card";
 import { RemoveProductButton } from "features/remove-product";
+import { AddProductButton } from "features/add-product";
+import { IncreaseProductQuantityButton } from "features/increase-product-quantity";
 
 export const Menu = () => {
     const { t } = useTranslation();
 
     const products = useAppSelector(productsSlice.selectors.products);
 
-    const preparedProducts = useDynamicProducts();
+    const { preparedProducts, isLoading } = useDynamicProducts();
 
-    if (!products) {
+    if (!products.length && !isLoading) {
         return <InfoText>{t("menu.noProducts")}</InfoText>;
     }
 
@@ -24,8 +26,9 @@ export const Menu = () => {
                 <ProductCard
                     key={cartProduct.product.id}
                     product={cartProduct}
-                    addProduct={<div>add product</div>}
+                    addProduct={<AddProductButton product={cartProduct} />}
                     removeProduct={<RemoveProductButton product={cartProduct} />}
+                    increaseProductQuantity={<IncreaseProductQuantityButton product={cartProduct} />}
                 />
             ))}
         </ProductList>

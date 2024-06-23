@@ -8,12 +8,12 @@ interface RemoveProductButtonProps {
 }
 
 export const RemoveProductButton = ({ product }: RemoveProductButtonProps) => {
-    const { onRemove, requestData } = useRemoveProduct();
+    const { onDecrease, isLoading } = useRemoveProduct();
 
-    const removeProduct = async () => onRemove(product);
+    const removeProduct = async () => onDecrease(product);
 
     return (
-        <QuantityButton disabled={requestData.isLoading} onClick={removeProduct}>
+        <QuantityButton disabled={isLoading} onClick={removeProduct}>
             <MinusIcon />
         </QuantityButton>
     );

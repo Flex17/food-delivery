@@ -31,7 +31,7 @@ export const useDynamicPagination = (
 
     const scrollHandler = (e: any) => {
         if (
-            e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100 &&
+            e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 300 &&
             data.length < total
         ) {
             setFetching(true);

@@ -11,8 +11,8 @@ export const useDynamicProducts = () => {
 
     const { startAt, endAt, products, total } = useAppSelector(state => state.products);
 
-    const { data: orderProducts } = cartAPI.useGetCartQuery({ localId });
-    productsAPI.useGetTotalQuery();
+    const { data: orderProducts, isLoading: isCartProductsLoading } = cartAPI.useGetCartQuery({ localId });
+    const { isLoading: isProductsLoading } = productsAPI.useGetTotalQuery();
     const [loadProducts] = productsAPI.useLazyGetAllQuery();
 
     const preparedProducts: ICartProduct[] = usePrepareProductsData(orderProducts || [], products);
@@ -26,10 +26,10 @@ export const useDynamicProducts = () => {
             endAt,
         };
 
-        return loadProducts(loadData);
+        return loadProducts(loadData).unwrap();
     };
 
     useDynamicPagination(products, total, onLoadProducts, increaseStartAt, increaseEndAt);
 
-    return preparedProducts;
+    return { preparedProducts, isLoading: isCartProductsLoading || isProductsLoading };
 };
