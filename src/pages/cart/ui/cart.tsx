@@ -27,7 +27,7 @@ const Cart = () => {
     }
 
     if (orderResponse) {
-        return <Navigate to={`/order/${orderResponse.name}`} />;
+        return <Navigate to={`/orders/${orderResponse.name}`} />;
     }
 
     if (!cartData?.length) {

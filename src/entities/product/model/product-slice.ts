@@ -23,10 +23,10 @@ export const productsSlice = createSlice({
             state.total = action.payload;
         },
         increaseStartAt(state, action: PayloadAction<number>) {
-            state.startAt += action.payload;
+            state.startAt = state.startAt + action.payload;
         },
         increaseEndAt(state, action: PayloadAction<number>) {
-            state.endAt += action.payload;
+            state.endAt = state.endAt + action.payload;
         },
     },
 });

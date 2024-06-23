@@ -1,24 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export const useDynamicPagination = (
-    data: any[],
+export const useDynamicPagination = <T>(
+    data: T[],
     total: number,
-    fetchFunc: () => any,
+    fetchFunc: () => Promise<T[]>,
     increaseStartAt: () => void,
     increaseEnd: () => void
 ) => {
+    const isMounted = useRef(false);
+
     const [fetching, setFetching] = useState(false);
 
-    const onFetch = () => {
-        fetchFunc().then(() => {
-            setFetching(false);
+    const onFetch = async () => {
+        try {
+            await fetchFunc();
+            console.log("increase");
             increaseStartAt();
             increaseEnd();
-        });
+        } catch (e) {
+            console.log(e);
+        } finally {
+            setFetching(false);
+        }
     };
 
     useEffect(() => {
-        if (!data.length) {
+        if (!data.length && !isMounted.current) {
+            isMounted.current = true;
             onFetch();
         }
     }, []);
@@ -29,16 +37,14 @@ export const useDynamicPagination = (
         }
     }, [fetching]);
 
-    const scrollHandler = (e: any) => {
-        if (
-            e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 300 &&
-            data.length < total
-        ) {
+    const scrollHandler = () => {
+        if (document.body.scrollHeight - (window.scrollY + window.innerHeight) < 400 && data.length <= total - 1) {
             setFetching(true);
         }
     };
+
     useEffect(() => {
         document.addEventListener("scroll", scrollHandler);
         return () => document.removeEventListener("scroll", scrollHandler);
-    });
+    }, [total, data.length]);
 };

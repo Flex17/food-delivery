@@ -1,23 +1,24 @@
-import { useMemo } from "react";
 import { ICartProduct, IProduct } from "entities/product";
 
-export const usePrepareProductsData = (orderProducts: ICartProduct[], products: IProduct[]) => {
-    const orderProductMap = useMemo(() => {
-        const map: { [key: number]: { id: string; quantity: number } } = {};
-        for (const orderProduct of orderProducts) {
-            map[orderProduct.product.id] = {
-                id: orderProduct.id,
-                quantity: orderProduct.quantity,
-            };
-        }
-        return map;
-    }, [orderProducts]);
+type IOrderProductMap = Map<number, { id: string; quantity: number }>;
 
-    return useMemo(() => {
+export const usePrepareProductsData = (orderProducts: ICartProduct[], products: IProduct[]): ICartProduct[] => {
+    const orderProductMap: IOrderProductMap = new Map();
+
+    for (const orderProduct of orderProducts) {
+        orderProductMap.set(orderProduct.product.id, {
+            id: orderProduct.id,
+            quantity: orderProduct.quantity,
+        });
+    }
+
+    if (orderProducts.length) {
         return products.map(product => ({
-            id: orderProductMap[product.id]?.id || product.id.toString(),
+            id: orderProductMap.get(product.id)?.id || product.id.toString(),
             product,
-            quantity: orderProductMap[product.id]?.quantity || 0,
+            quantity: orderProductMap.get(product.id)?.quantity || 0,
         }));
-    }, [products, orderProductMap]);
+    }
+
+    return [];
 };

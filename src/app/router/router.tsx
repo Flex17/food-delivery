@@ -8,6 +8,9 @@ import { Suspense } from "react";
 import { Spinner } from "shared/ui";
 import { Menu } from "pages/menu";
 import { Cart } from "pages/cart";
+import { SuccessOrder } from "pages/success-order";
+import NotFound from "pages/404/ui/not-found.tsx";
+import Orders from "pages/orders/ui/orders.tsx";
 
 const authorizedRoutes: RouteObject[] = [
     {
@@ -23,6 +26,22 @@ const authorizedRoutes: RouteObject[] = [
         element: (
             <Suspense fallback={<Spinner />}>
                 <Cart />
+            </Suspense>
+        ),
+    },
+    {
+        path: "/orders",
+        element: (
+            <Suspense fallback={<Spinner />}>
+                <Orders />
+            </Suspense>
+        ),
+    },
+    {
+        path: "/orders/:id",
+        element: (
+            <Suspense fallback={<Spinner />}>
+                <SuccessOrder />
             </Suspense>
         ),
     },
@@ -62,5 +81,6 @@ export const router = createBrowserRouter([
                 children: unauthorizedRoutes,
             },
         ],
+        errorElement: <NotFound />,
     },
 ]);

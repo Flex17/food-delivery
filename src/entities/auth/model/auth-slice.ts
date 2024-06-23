@@ -14,6 +14,7 @@ export const authSlice = createSlice({
     selectors: {
         isAuth: state => state.isAuth,
         localId: state => state.localId,
+        name: state => state.displayName,
     },
     reducers: {
         setIsAuth(state, action: PayloadAction<boolean>) {
