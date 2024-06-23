@@ -3,18 +3,23 @@ import { useTranslation } from "react-i18next";
 import { useAppSelector } from "app/redux/store.ts";
 import { productsSlice } from "entities/product";
 import { useDynamicProducts } from "pages/menu/libs/useDynamicProducts.ts";
-import { InfoText } from "shared/ui";
-import { ProductCard } from "widgets/product-card";
-import { RemoveProductButton } from "features/remove-product";
-import { AddProductButton } from "features/add-product";
-import { IncreaseProductQuantityButton } from "features/increase-product-quantity";
+import { InfoText, Spinner } from "shared/ui";
+import { MenuProductCard } from "widgets/menu-product-card";
+import { AddProductButton } from "features/menu-product/add-product";
+import { RemoveProductButton } from "features/menu-product/remove-product";
+import { IncreaseProductQuantityButton } from "features/menu-product/increase-product-quantity";
+import { ProductQuantityControls } from "widgets/product-quantity-controls";
 
-export const Menu = () => {
+const Menu = () => {
     const { t } = useTranslation();
 
     const products = useAppSelector(productsSlice.selectors.products);
 
     const { preparedProducts, isLoading } = useDynamicProducts();
+
+    if (isLoading && !products.length) {
+        return <Spinner />;
+    }
 
     if (!products.length && !isLoading) {
         return <InfoText>{t("menu.noProducts")}</InfoText>;
@@ -23,14 +28,21 @@ export const Menu = () => {
     return (
         <ProductList>
             {preparedProducts.map(cartProduct => (
-                <ProductCard
+                <MenuProductCard
                     key={cartProduct.product.id}
                     product={cartProduct}
                     addProduct={<AddProductButton product={cartProduct} />}
-                    removeProduct={<RemoveProductButton product={cartProduct} />}
-                    increaseProductQuantity={<IncreaseProductQuantityButton product={cartProduct} />}
-                />
+                >
+                    <ProductQuantityControls
+                        descrease={<RemoveProductButton product={cartProduct} />}
+                        increase={<IncreaseProductQuantityButton product={cartProduct} />}
+                    >
+                        {cartProduct.quantity}
+                    </ProductQuantityControls>
+                </MenuProductCard>
             ))}
         </ProductList>
     );
 };
+
+export default Menu;

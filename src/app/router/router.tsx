@@ -7,11 +7,24 @@ import { Registration } from "pages/registration";
 import { Suspense } from "react";
 import { Spinner } from "shared/ui";
 import { Menu } from "pages/menu";
+import { Cart } from "pages/cart";
 
 const authorizedRoutes: RouteObject[] = [
     {
         path: "/",
-        element: <Menu />,
+        element: (
+            <Suspense fallback={<Spinner />}>
+                <Menu />
+            </Suspense>
+        ),
+    },
+    {
+        path: "/cart",
+        element: (
+            <Suspense fallback={<Spinner />}>
+                <Cart />
+            </Suspense>
+        ),
     },
 ];
 
