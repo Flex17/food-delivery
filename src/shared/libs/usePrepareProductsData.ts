@@ -12,7 +12,7 @@ export const usePrepareProductsData = (orderProducts: ICartProduct[], products: 
         });
     }
 
-    if (orderProducts.length) {
+    if (products.length) {
         return products.map(product => ({
             id: orderProductMap.get(product.id)?.id || product.id.toString(),
             product,

@@ -69,7 +69,6 @@ const reauth = async (
         );
 
         if (refreshResult.data) {
-            console.log(refreshResult.data);
             const accessToken = (refreshResult.data as any).id_token;
             localStorage.setItem("access_token", accessToken);
 

@@ -18,7 +18,7 @@ export const AuthorizationForm = () => {
 
     return (
         <AuthenticationFormWrapper handleSubmit={onSubmit}>
-            <Title>{t("registration.title")}</Title>
+            <Title>{t("authorization.title")}</Title>
             <Input
                 className={css.input_wrapper}
                 {...emailRegister}
@@ -32,7 +32,7 @@ export const AuthorizationForm = () => {
                 description={errors.password?.message}
             />
             <Button type="submit" state={!isValid || requestData.isLoading ? "disabled" : "default"}>
-                {t("registration.btnText")}
+                {t("authorization.btnText")}
             </Button>
             <ChangeAuthMethod />
         </AuthenticationFormWrapper>

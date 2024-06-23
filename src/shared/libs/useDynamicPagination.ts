@@ -14,7 +14,7 @@ export const useDynamicPagination = <T>(
     const onFetch = async () => {
         try {
             await fetchFunc();
-            console.log("increase");
+
             increaseStartAt();
             increaseEnd();
         } catch (e) {
