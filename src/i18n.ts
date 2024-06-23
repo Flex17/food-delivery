@@ -23,6 +23,7 @@ i18n.use(LanguageDetector)
                     },
                     menu: {
                         noProducts: "No products found...",
+                        logout: "Logout",
                     },
                     navbar: {
                         menu: "Menu",
@@ -96,6 +97,7 @@ i18n.use(LanguageDetector)
                     },
                     menu: {
                         noProducts: "Продуктов не найдено...",
+                        logout: "Выйти",
                     },
                     productCard: {
                         toCart: "Добавить в корзину",

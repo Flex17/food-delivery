@@ -1,0 +1,5 @@
+@use "/src/app/styles/mixins";
+
+.controls_wrapper {
+  @include mixins.flex-between();
+}

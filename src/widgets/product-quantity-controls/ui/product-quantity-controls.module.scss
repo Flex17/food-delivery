@@ -1,9 +1,7 @@
 @use "/src/app/styles/variables";
 
 .controls_wrapper {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: 20px;
 }
 
@@ -12,9 +10,12 @@
   width: 45px;
   height: 45px;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
   justify-content: center;
   font-weight: 600;
   color: variables.$text_color;
+}
+
+.controls_wrapper, .count {
+  display: flex;
+  align-items: center;
 }

@@ -1,21 +1,17 @@
 @use "/src/app/styles/variables";
+@use "/src/app/styles/mixins";
 
-.wrapper {
-  width: 100%;
-}
-
-.container {
+.wrapper, .container {
   width: 100%;
 }
 
 .main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border: 2px solid variables.$main_green;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+
+  @include mixins.flex-between();
 }
 
 .main_opened {

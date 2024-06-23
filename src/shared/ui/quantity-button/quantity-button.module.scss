@@ -1,4 +1,5 @@
 @use "/src/app/styles/variables";
+@use "/src/app/styles/mixins";
 
 .wrapper {
     border-radius: 50%;
@@ -6,10 +7,9 @@
     border: none;
     color: variables.$white;
     padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: all 0.3s ease-in-out;
+
+    @include mixins.flex-center();
 }
 
 .disabled {

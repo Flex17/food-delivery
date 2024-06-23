@@ -1,12 +1,12 @@
 @use "/src/app/styles/variables";
+@use "/src/app/styles/mixins";
 
 .wrapper {
     background-color: variables.$dark_green;
     height: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+    @include mixins.flex-center();
 }
 
 .title {

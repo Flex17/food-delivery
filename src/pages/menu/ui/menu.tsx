@@ -5,10 +5,10 @@ import { productsSlice } from "entities/product";
 import { useDynamicProducts } from "pages/menu/libs/useDynamicProducts.ts";
 import { InfoText, Spinner } from "shared/ui";
 import { MenuProductCard } from "widgets/menu-product-card";
-import { AddProductButton } from "features/menu-product/add-product";
-import { RemoveProductButton } from "features/menu-product/remove-product";
-import { IncreaseProductQuantityButton } from "features/menu-product/increase-product-quantity";
 import { ProductQuantityControls } from "widgets/product-quantity-controls";
+import { AddProductButton } from "features/add-product";
+import { RemoveProductButton } from "features/remove-product";
+import { IncreaseProductQuantityButton } from "features/increase-product-quantity";
 
 const Menu = () => {
     const { t } = useTranslation();

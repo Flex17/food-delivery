@@ -1,14 +1,15 @@
+@use "/src/app/styles/mixins";
+
 .product {
-  display: flex;
   align-items: stretch;
   gap: 20px;
+  display: flex;
 }
 
 .product_info {
-  display: flex;
-  align-items: start;
   flex-direction: column;
-  justify-content: space-between;
+
+  @include mixins.flex-between-start();
 }
 
 .picture {

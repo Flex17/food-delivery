@@ -27,7 +27,7 @@ const Orders = () => {
         <div className={css.wrapper}>
             <Title>{t("history.title")}</Title>
             <OrdersList>
-                {orders.map(order => {
+                {[...orders].reverse().map(order => {
                     return (
                         <OrdersOrderCard key={order.id} order={order}>
                             {order.products.map(product => (

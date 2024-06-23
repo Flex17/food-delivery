@@ -1,4 +1,5 @@
 @use "/src/app/styles/variables";
+@use "/src/app/styles/mixins";
 
 .wrapper {
   background-color: variables.$dark_green;
@@ -11,19 +12,19 @@
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include mixins.flex-between();
 }
 
 .nav_block {
-  display: flex;
   align-items: center;
 
   .nav_items {
-    display: flex;
     gap: 30px;
     margin-left: 40px;
     list-style-type: none;
   }
+}
+
+.nav_block, .nav_items {
+  display: flex;
 }

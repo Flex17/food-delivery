@@ -9,8 +9,6 @@ import {
 import { redirect } from "react-router-dom";
 import { QueryReturnValue } from "shared/api/types.ts";
 
-// export const API_KEY = "AIzaSyB3q_WvA5Xct-kx8vnnVau9Fwp9nBMuh4g";
-
 export const providesList = <R extends { id: string | number }[], T extends string>(
     resultsWithIds: R | undefined,
     tagType: T

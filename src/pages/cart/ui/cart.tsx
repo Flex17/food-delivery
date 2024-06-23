@@ -6,13 +6,13 @@ import { useAppSelector } from "app/redux/store.ts";
 import { authSlice } from "entities/auth";
 import { CartProductCard } from "widgets/cart-product-card";
 import { DeleteProductButton } from "features/delete-product";
-import { RemoveProductButton } from "features/menu-product/remove-product";
-import { IncreaseProductQuantityButton } from "features/menu-product/increase-product-quantity";
 import { ProductQuantityControls } from "widgets/product-quantity-controls";
 import css from "./cart.module.scss";
 import { OrderForm } from "widgets/order-form";
 import { useMakeOrder } from "features/make-order/api/useMakeOrder.ts";
 import { Navigate } from "react-router-dom";
+import { RemoveProductButton } from "features/remove-product";
+import { IncreaseProductQuantityButton } from "features/increase-product-quantity";
 
 const Cart = () => {
     const { t } = useTranslation();
