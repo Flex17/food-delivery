@@ -2,4 +2,5 @@
 
 .controls_wrapper {
   @include mixins.flex-between();
+  padding: 0 20px;
 }

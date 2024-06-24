@@ -28,3 +28,9 @@
 .nav_block, .nav_items {
   display: flex;
 }
+
+@media (max-width: 350px) {
+  .nav_block .nav_items {
+      margin-left: 0px;
+  }
+}
