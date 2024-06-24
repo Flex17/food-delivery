@@ -1,4 +1,4 @@
-import { ProductList } from "pages/menu/ui/product-list/product-list.tsx";
+import { ProductList } from "./product-list/product-list.tsx";
 import { useTranslation } from "react-i18next";
 import { useAppSelector } from "app/redux/store.ts";
 import { productsSlice } from "entities/product";
