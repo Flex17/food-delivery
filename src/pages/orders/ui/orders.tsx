@@ -1,4 +1,4 @@
-import { InfoText, Spinner, Title } from "shared/ui";
+import { InfoText, Loader, Title } from "shared/ui";
 import { ordersAPI } from "entities/order/api/api.ts";
 import { useAppSelector } from "app/redux/store.ts";
 import { useTranslation } from "react-i18next";
@@ -16,7 +16,7 @@ const Orders = () => {
     const { data: orders, isLoading } = ordersAPI.useGetAllQuery({ localId });
 
     if (isLoading) {
-        return <Spinner />;
+        return <Loader />;
     }
 
     if (!orders?.length) {

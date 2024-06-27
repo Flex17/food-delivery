@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { InfoText, Spinner, Title } from "shared/ui";
+import { InfoText, Loader, Title } from "shared/ui";
 import { CartList } from "pages/cart/ui/cart-list/cart-list.tsx";
 import { cartAPI } from "entities/cart/api/api.ts";
 import { useAppSelector } from "app/redux/store.ts";
@@ -23,11 +23,11 @@ const Cart = () => {
     const { isCartLoading, isOrderLoading, onOrder, cartData, orderResponse } = useMakeOrder();
 
     if (isOrderLoading || isCartLoading) {
-        return <Spinner />;
+        return <Loader />;
     }
 
     if (orderResponse) {
-        return <Navigate to={`/orders/${orderResponse.name}`} />;
+        return <Navigate to={`/order/${orderResponse.name}`} />;
     }
 
     if (!cartData?.length) {

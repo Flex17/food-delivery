@@ -28,7 +28,7 @@ export const useMakeOrder = () => {
                     products: cartData,
                     localId,
                     totalPrice: cost,
-                });
+                }).unwrap();
                 await Promise.all([clearCart({ localId }).unwrap(), updateOrders({ localId }).unwrap()]);
             }
         } catch (error) {

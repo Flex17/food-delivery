@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useAppSelector } from "app/redux/store.ts";
 import { productsSlice } from "entities/product";
 import { useDynamicProducts } from "pages/menu/libs/useDynamicProducts.ts";
-import { InfoText, Spinner } from "shared/ui";
+import { InfoText, Loader } from "shared/ui";
 import { MenuProductCard } from "widgets/menu-product-card";
 import { ProductQuantityControls } from "widgets/product-quantity-controls";
 import { AddProductButton } from "features/add-product";
@@ -18,7 +18,7 @@ const Menu = () => {
     const { preparedProducts, isLoading } = useDynamicProducts();
 
     if (isLoading && !products.length) {
-        return <Spinner />;
+        return <Loader />;
     }
 
     if (!products.length && !isLoading) {

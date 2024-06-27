@@ -1,6 +1,7 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import css from "./unauthorized.module.scss";
 import { SelectLanguage } from "features/select-language";
+import { PublicAppRouter } from "app/providers/router";
 
 export const Unauthorized = () => {
     const token = localStorage.getItem("access_token");
@@ -12,7 +13,7 @@ export const Unauthorized = () => {
             <div className={css.selector}>
                 <SelectLanguage />
             </div>
-            <Outlet />
+            <PublicAppRouter />
         </>
     );
 };

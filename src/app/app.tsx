@@ -1,11 +1,11 @@
 import css from "./app.module.scss";
-import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { RequireAuth } from "app/layouts/require-auth/require-auth.tsx";
 
 const App = () => {
     return (
         <div className={css.app}>
-            <Outlet />
+            <RequireAuth />
             <ToastContainer />
         </div>
     );
