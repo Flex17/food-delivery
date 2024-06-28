@@ -3,7 +3,7 @@
 .wrapper {
     height: 100vh;
 
-    @include mixins.flex-center
+    @include mixins.flex-center;
 }
 
 .form {

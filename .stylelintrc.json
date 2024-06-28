@@ -3,6 +3,7 @@
   "rules": {
     "indentation": [
       4
-    ]
+    ],
+    "block-no-empty": true
   }
 }
