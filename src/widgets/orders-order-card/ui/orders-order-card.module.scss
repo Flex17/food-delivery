@@ -1,33 +1,34 @@
 @use "/src/app/styles/variables";
 
 .wrapper {
-  border: 2px solid variables.$main_green;
-  color: variables.$dark_green;
-  padding: 10px;
-  border-radius: 5px;
+    border: 2px solid variables.$main_green;
+    color: variables.$dark_green;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .main_info {
-  margin-bottom: 15px;
-  gap: 10px;
+    margin-bottom: 15px;
+    gap: 10px;
 
-  @media (max-width: 840px) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+    @media (max-width: 840px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
 .num {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .products {
-  flex-direction: column;
-  gap: 40px;
-  margin-top: 15px;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 15px;
 }
 
-.main_info, .products {
-  display: flex;
+.main_info,
+.products {
+    display: flex;
 }

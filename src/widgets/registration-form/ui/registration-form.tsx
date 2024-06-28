@@ -1,10 +1,12 @@
-import { AuthenticationFormWrapper, Button, Input, Title } from "shared/ui";
+import {
+    AuthenticationFormWrapper, Button, Input, Title,
+    PasswordInput,
+} from "shared/ui";
 import { emailPlaceholder } from "shared/libs/useFormOptions.ts";
 import { useRegister } from "widgets/registration-form/api/useRegister.ts";
 import { useTranslation } from "react-i18next";
-import css from "./registration-form.module.scss";
-import { PasswordInput } from "shared/ui";
 import { ChangeAuthMethod } from "features/change-auth-method";
+import css from "./registration-form.module.scss";
 
 export interface IRegistrationForm {
     displayName: string;
@@ -16,7 +18,9 @@ export interface IRegistrationForm {
 export const RegistrationForm = () => {
     const { t } = useTranslation();
 
-    const { isValid, passwordRegister, emailRegister, nameRegister, errors, onSubmit, requestData } = useRegister();
+    const {
+        isValid, passwordRegister, emailRegister, nameRegister, errors, onSubmit, requestData,
+    } = useRegister();
 
     return (
         <AuthenticationFormWrapper handleSubmit={onSubmit}>

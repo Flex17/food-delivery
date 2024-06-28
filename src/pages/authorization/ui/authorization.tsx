@@ -1,7 +1,5 @@
 import { AuthorizationForm } from "widgets/authorization-form";
 
-const Authorization = () => {
-    return <AuthorizationForm />;
-};
+const Authorization = () => <AuthorizationForm />;
 
 export default Authorization;

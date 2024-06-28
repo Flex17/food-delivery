@@ -1,6 +1,6 @@
-import { useIncreaseProductQuantity } from "../api/useIncreaseProductQuantity.ts";
 import { QuantityButton } from "shared/ui";
 import { ICartProduct } from "entities/product";
+import { useIncreaseProductQuantity } from "../api/useIncreaseProductQuantity.ts";
 import { ReactComponent as PlusIcon } from "./icons/plus.svg";
 
 interface IncreaseProductQuantityButtonProps {

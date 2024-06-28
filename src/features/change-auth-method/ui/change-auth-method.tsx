@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
-import css from "./change-auth-method.module.scss";
 import { TFunction } from "i18next";
 import { PublicRouterPath } from "shared/config/router/publicRoterConfig.tsx";
+import css from "./change-auth-method.module.scss";
 
 const generateLinkAndText = (
     pathname: string,
-    t: TFunction<"translation", undefined>
+    t: TFunction<"translation", undefined>,
 ): { link: string; text: string } => {
     const link = pathname.includes(PublicRouterPath.registration)
         ? PublicRouterPath.authorization

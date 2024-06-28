@@ -1,10 +1,8 @@
-import css from "./orders-list.module.scss";
 import React from "react";
+import css from "./orders-list.module.scss";
 
 interface OrdersListProps {
     children: React.ReactNode;
 }
 
-export const OrdersList = ({ children }: OrdersListProps) => {
-    return <div className={css.wrapper}>{children}</div>;
-};
+export const OrdersList = ({ children }: OrdersListProps) => <div className={css.wrapper}>{children}</div>;

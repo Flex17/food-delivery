@@ -1,16 +1,16 @@
 @use "/src/app/styles/variables";
 
 .wrapper {
-  padding-bottom: 40px;
+    padding-bottom: 40px;
 
-  @media (max-width: 1300px) {
-    padding: 0 20px 40px 20px;
-  }
+    @media (max-width: 1300px) {
+        padding: 0 20px 40px
+    }
 }
 
 .sum {
-  display: block;
-  text-align: right;
-  font-weight: 600;
-  color: variables.$dark_green;
+    display: block;
+    text-align: right;
+    font-weight: 600;
+    color: variables.$dark_green;
 }

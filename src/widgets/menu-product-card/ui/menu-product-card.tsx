@@ -10,14 +10,20 @@ interface ProductCardProps {
 
 export const MenuProductCard = ({ product, addProduct, children }: ProductCardProps) => {
     const { quantity, product: productData } = product;
-    const { img, name, description, price } = productData;
+    const {
+        img, name, description, price,
+    } = productData;
 
     return (
         <div className={css.wrapper}>
             <div className={css.picture_block}>
                 <img className={css.picture} src={img} alt={name} />
                 <div className={css.price}>
-                    <span>{price} ₽</span>
+                    <span>
+                        {price}
+                        {" "}
+                        ₽
+                    </span>
                 </div>
             </div>
             <h4 className={css.name}>{name}</h4>

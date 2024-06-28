@@ -1,6 +1,6 @@
+import { IDropdownItem } from "shared/ui/dropdown/dropdown.tsx";
 import { ReactComponent as SelectedIcon } from "../icons/selected.svg";
 import css from "./dropdown-item.module.scss";
-import { IDropdownItem } from "shared/ui/dropdown/dropdown.tsx";
 
 interface DropdownItemProps {
     item: IDropdownItem;

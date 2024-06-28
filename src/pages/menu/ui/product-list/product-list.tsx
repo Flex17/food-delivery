@@ -5,6 +5,4 @@ interface ProductListProps {
     children: React.ReactNode;
 }
 
-export const ProductList = ({ children }: ProductListProps) => {
-    return <div className={css.wrapper}>{children}</div>;
-};
+export const ProductList = ({ children }: ProductListProps) => <div className={css.wrapper}>{children}</div>;

@@ -7,10 +7,8 @@ interface QuantityButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
     children: React.ReactNode;
 }
 
-export const QuantityButton = ({ children, onClick, ...props }: QuantityButtonProps) => {
-    return (
-        <button type="button" onClick={onClick} className={cx(css.wrapper, props.disabled && css.disabled)} {...props}>
-            {children}
-        </button>
-    );
-};
+export const QuantityButton = ({ children, onClick, ...props }: QuantityButtonProps) => (
+    <button type="button" onClick={onClick} className={cx(css.wrapper, props.disabled && css.disabled)} {...props}>
+        {children}
+    </button>
+);

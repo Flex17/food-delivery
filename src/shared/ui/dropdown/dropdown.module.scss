@@ -1,41 +1,42 @@
 @use "/src/app/styles/variables";
 @use "/src/app/styles/mixins";
 
-.wrapper, .container {
-  width: 100%;
+.wrapper,
+.container {
+    width: 100%;
 }
 
 .main {
-  border: 2px solid variables.$main_green;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
+    border: 2px solid variables.$main_green;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
 
-  @include mixins.flex-between();
+    @include mixins.flex-between
 }
 
 .main_opened {
-  border-bottom: none;
-  border-radius: 5px 5px 0 0;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0
 }
 
 .hidden {
-  max-width: 100%;
-  position: relative;
+    max-width: 100%;
+    position: relative;
 
-  .block {
-    position: absolute;
-    background-color: variables.$white;
-    z-index: 10;
-    border: 2px solid variables.$main_green;
-    border-bottom: none;
-  }
+    .block {
+        position: absolute;
+        background-color: variables.$white;
+        z-index: 10;
+        border: 2px solid variables.$main_green;
+        border-bottom: none;
+    }
 }
 
 .invisible {
-  display: none;
+    display: none;
 }
 
 .visible {
-  width: 100%
+    width: 100%;
 }

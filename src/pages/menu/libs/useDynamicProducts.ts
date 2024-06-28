@@ -26,7 +26,7 @@ export const useDynamicProducts = () => {
             endAt,
         };
 
-        return await loadProducts(loadData).unwrap();
+        return loadProducts(loadData).unwrap();
     };
 
     useDynamicPagination(products, total, onLoadProducts, increaseStartAt, increaseEndAt);

@@ -32,7 +32,7 @@ export const useAuthorize = () => {
     const passwordRegister = {
         ...register("password", passwordInputOptions as RegisterOptions<IAuthorizationForm>),
     };
-    const onAuthorization: SubmitHandler<IAuthorizationForm> = async data => {
+    const onAuthorization: SubmitHandler<IAuthorizationForm> = async (data) => {
         try {
             const userData = await authorization(data).unwrap();
             setUser({ ...userData });

@@ -2,59 +2,59 @@
 @use "/src/app/styles/mixins";
 
 .wrapper {
-  gap: 10px;
+    gap: 10px;
 
-  @include mixins.flex-between();
+    @include mixins.flex-between;
 
-  @media (max-width: 1000px) {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-  }
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
 }
 
 .picture {
-  width: 150px;
-  border-radius: 50%;
+    width: 150px;
+    border-radius: 50%;
 }
 
 .description_block {
-  margin-left: 15px;
-  max-width: 60%;
-
-  @media (max-width: 1000px) {
-    max-width: 100%;
-  }
-
-  .title {
-    color: variables.$dark_green;
+    margin-left: 15px;
+    max-width: 60%;
 
     @media (max-width: 1000px) {
-      text-align: center;
+        max-width: 100%;
     }
-  }
 
-  .description {
-    color: variables.$secondary_text_color;
+    .title {
+        color: variables.$dark_green;
 
-    @media (max-width: 1000px) {
-      text-align: center;
+        @media (max-width: 1000px) {
+            text-align: center;
+        }
     }
-  }
+
+    .description {
+        color: variables.$secondary_text_color;
+
+        @media (max-width: 1000px) {
+            text-align: center;
+        }
+    }
 }
 
 .price_container {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 
-  @media (max-width: 1000px) {
-    justify-content: center;
-  }
+    @media (max-width: 1000px) {
+        justify-content: center;
+    }
 }
 
 .price_block {
-  display: inline-flex;
-  border: 2px solid variables.$main_green;
-  padding: 10px;
-  border-radius: 10px;
+    display: inline-flex;
+    border: 2px solid variables.$main_green;
+    padding: 10px;
+    border-radius: 10px;
 }

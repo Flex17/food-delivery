@@ -10,10 +10,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     state: ButtonStateT;
 }
 
-export const Button = ({ state, styles, children, ...props }: ButtonProps) => {
-    return (
-        <button {...props} disabled={state === "disabled"} className={cx(css.wrapper, css[state], styles)}>
-            {children}
-        </button>
-    );
-};
+export const Button = ({ state, styles, children, ...props }: ButtonProps) => (
+    <button type="button" {...props} disabled={state === "disabled"} className={cx(css.wrapper, css[state], styles)}>
+        {children}
+    </button>
+);

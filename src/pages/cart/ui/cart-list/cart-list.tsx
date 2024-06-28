@@ -5,6 +5,4 @@ interface CartListProps {
     children: React.ReactNode;
 }
 
-export const CartList = ({ children }: CartListProps) => {
-    return <div className={css.wrapper}>{children}</div>;
-};
+export const CartList = ({ children }: CartListProps) => <div className={css.wrapper}>{children}</div>;

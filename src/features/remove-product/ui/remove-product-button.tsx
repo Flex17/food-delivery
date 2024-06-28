@@ -1,6 +1,6 @@
-import { useRemoveProduct } from "../api/useRemoveProduct.ts";
 import { QuantityButton } from "shared/ui";
 import { ICartProduct } from "entities/product";
+import { useRemoveProduct } from "../api/useRemoveProduct.ts";
 import { ReactComponent as MinusIcon } from "./icons/minus.svg";
 
 interface RemoveProductButtonProps {

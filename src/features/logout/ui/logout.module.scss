@@ -1,10 +1,10 @@
 @use "/src/app/styles/variables";
 
 .button {
-  border: 2px solid variables.$dark_green;
-  background-color: variables.$light_green;
-  color: variables.$text_color;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 5px 10px;
+    border: 2px solid variables.$dark_green;
+    background-color: variables.$light_green;
+    color: variables.$text_color;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 5px 10px;
 }

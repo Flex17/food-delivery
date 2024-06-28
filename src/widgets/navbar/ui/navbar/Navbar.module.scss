@@ -2,35 +2,36 @@
 @use "/src/app/styles/mixins";
 
 .wrapper {
-  background-color: variables.$dark_green;
-  margin-bottom: 20px;
-  padding: 40px;
+    background-color: variables.$dark_green;
+    margin-bottom: 20px;
+    padding: 40px;
 
-  @media (max-width: 1250px) {
-    padding: 20px;
-  }
+    @media (max-width: 1250px) {
+        padding: 20px;
+    }
 }
 
 .nav {
-  @include mixins.flex-between();
+    @include mixins.flex-between;
 }
 
 .nav_block {
-  align-items: center;
+    align-items: center;
 
-  .nav_items {
-    gap: 30px;
-    margin-left: 40px;
-    list-style-type: none;
-  }
+    .nav_items {
+        gap: 30px;
+        margin-left: 40px;
+        list-style-type: none;
+    }
 }
 
-.nav_block, .nav_items {
-  display: flex;
+.nav_block,
+.nav_items {
+    display: flex;
 }
 
 @media (max-width: 350px) {
-  .nav_block .nav_items {
-      margin-left: 0px;
-  }
+    .nav_block .nav_items {
+        margin-left: 0;
+    }
 }

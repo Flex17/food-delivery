@@ -38,7 +38,7 @@ export const useRegister = () => {
         ...register("password", passwordInputOptions as RegisterOptions<IRegistrationForm>),
     };
 
-    const onRegistration: SubmitHandler<IRegistrationForm> = async data => {
+    const onRegistration: SubmitHandler<IRegistrationForm> = async (data) => {
         try {
             const userData = await registration(data).unwrap();
             setUser({ ...userData });

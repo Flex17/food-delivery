@@ -1,9 +1,11 @@
-import { AuthenticationFormWrapper, Button, Input, Title } from "shared/ui";
+import {
+    AuthenticationFormWrapper, Button, Input, Title,
+    PasswordInput,
+} from "shared/ui";
 import { emailPlaceholder } from "shared/libs/useFormOptions.ts";
-import { PasswordInput } from "shared/ui";
 import { useTranslation } from "react-i18next";
-import { useAuthorize } from "../api/useAuthorize.ts";
 import { ChangeAuthMethod } from "features/change-auth-method";
+import { useAuthorize } from "../api/useAuthorize.ts";
 import css from "./authorization-form.module.scss";
 
 export interface IAuthorizationForm {
@@ -14,7 +16,9 @@ export interface IAuthorizationForm {
 export const AuthorizationForm = () => {
     const { t } = useTranslation();
 
-    const { passwordRegister, emailRegister, errors, isValid, onSubmit, requestData } = useAuthorize();
+    const {
+        passwordRegister, emailRegister, errors, isValid, onSubmit, requestData,
+    } = useAuthorize();
 
     return (
         <AuthenticationFormWrapper handleSubmit={onSubmit}>

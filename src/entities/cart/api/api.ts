@@ -1,26 +1,24 @@
 import { ICartProduct, IProduct } from "entities/product";
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { baseQueryWithReauth } from "shared/api";
+import { IAuthRequest } from "shared/types.ts";
 import { CARTS_URL } from "./consts.ts";
 import { IAddProductRequest, IHandleProductRequest } from "./types.ts";
-import { IAuthRequest } from "shared/types.ts";
 
-const handleObject = (response: ICartProduct[]) => {
-    return Object.entries(response).map(([key, value]) => ({
-        id: key,
-        product: value.product,
-        quantity: value.quantity,
-    }));
-};
+const handleObject = (response: ICartProduct[]) => Object.entries(response).map(([key, value]) => ({
+    id: key,
+    product: value.product,
+    quantity: value.quantity,
+}));
 
 export const cartAPI = createApi({
     reducerPath: "cartAPI",
     baseQuery: baseQueryWithReauth,
     tagTypes: ["cart"],
-    endpoints: builder => ({
+    endpoints: (builder) => ({
         getCart: builder.query<ICartProduct[], IAuthRequest>({
             query: ({ localId }) => ({
-                url: CARTS_URL + "/" + localId + ".json",
+                url: `${CARTS_URL}/${localId}.json`,
                 method: "GET",
                 params: {},
             }),
@@ -32,7 +30,7 @@ export const cartAPI = createApi({
         }),
         updateProductQuantity: builder.mutation<IProduct[], IHandleProductRequest>({
             query: ({ localId, ...data }) => ({
-                url: CARTS_URL + "/" + localId + "/" + data.product.id + ".json",
+                url: `${CARTS_URL}/${localId}/${data.product.id}.json`,
                 method: "PUT",
                 params: {
                     // auth,
@@ -45,7 +43,7 @@ export const cartAPI = createApi({
         }),
         addProduct: builder.mutation<void, IAddProductRequest>({
             query: ({ localId, product, ...data }) => ({
-                url: CARTS_URL + "/" + localId + ".json",
+                url: `${CARTS_URL}/${localId}.json`,
                 method: "POST",
                 params: {},
                 body: {
@@ -57,7 +55,7 @@ export const cartAPI = createApi({
         }),
         removeProduct: builder.mutation<void, IHandleProductRequest>({
             query: ({ localId, ...data }) => ({
-                url: CARTS_URL + "/" + localId + "/" + data.product.id + ".json",
+                url: `${CARTS_URL}/${localId}/${data.product.id}.json`,
                 method: "DELETE",
                 params: {},
                 body: data,
@@ -66,7 +64,7 @@ export const cartAPI = createApi({
         }),
         clearCart: builder.mutation<void, IAuthRequest>({
             query: ({ localId }) => ({
-                url: CARTS_URL + "/" + localId + ".json",
+                url: `${CARTS_URL}/${localId}.json`,
                 method: "DELETE",
                 params: {},
             }),

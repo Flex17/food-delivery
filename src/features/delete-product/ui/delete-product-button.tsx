@@ -1,8 +1,8 @@
 import { Button } from "shared/ui";
 import { useTranslation } from "react-i18next";
-import { useDeleteProduct } from "../api/useDeleteProduct.ts";
 import { ICartProduct } from "entities/product";
 import cx from "classnames";
+import { useDeleteProduct } from "../api/useDeleteProduct.ts";
 import css from "./delete-product-button.module.scss";
 
 interface DeleteProductButtonProps {

@@ -14,10 +14,17 @@ const SuccessOrder = () => {
     return (
         <>
             <InfoText>
-                {name}, {t("successOrder.thanks")}
+                {name}
+                ,
+                {t("successOrder.thanks")}
             </InfoText>
             <InfoText>
-                {t("successOrder.order.first")} #{id} {t("successOrder.order.second")}
+                {t("successOrder.order.first")}
+                {" "}
+                #
+                {id}
+                {" "}
+                {t("successOrder.order.second")}
             </InfoText>
         </>
     );

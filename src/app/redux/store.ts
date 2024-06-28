@@ -17,13 +17,12 @@ const rootReducer = combineReducers({
 
 export const store = configureStore({
     reducer: rootReducer,
-    middleware: getDefaultMiddleware =>
-        getDefaultMiddleware().concat([
-            authAPI.middleware,
-            cartAPI.middleware,
-            productsAPI.middleware,
-            ordersAPI.middleware,
-        ]),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([
+        authAPI.middleware,
+        cartAPI.middleware,
+        productsAPI.middleware,
+        ordersAPI.middleware,
+    ]),
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

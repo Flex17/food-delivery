@@ -6,12 +6,10 @@ interface AuthenticationFormWrapperProps {
     children: React.ReactNode;
 }
 
-export const AuthenticationFormWrapper = ({ handleSubmit, children }: AuthenticationFormWrapperProps) => {
-    return (
-        <div className={css.wrapper}>
-            <form className={css.form} onSubmit={handleSubmit}>
-                {children}
-            </form>
-        </div>
-    );
-};
+export const AuthenticationFormWrapper = ({ handleSubmit, children }: AuthenticationFormWrapperProps) => (
+    <div className={css.wrapper}>
+        <form className={css.form} onSubmit={handleSubmit}>
+            {children}
+        </form>
+    </div>
+);

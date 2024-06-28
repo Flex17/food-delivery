@@ -2,9 +2,9 @@ import { useTranslation } from "react-i18next";
 import { Button, Dropdown, Input } from "shared/ui";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useHandlePaymentTranslation } from "widgets/order-form/libs/useHandlePaymentTranslation.ts";
 import { IPaymentMethod, PaymentMethods, PaymentMethodT } from "../model/payment-data.ts";
 import css from "./order-form.module.scss";
-import { useHandlePaymentTranslation } from "widgets/order-form/libs/useHandlePaymentTranslation.ts";
 
 interface IOrderForm {
     address: string;
@@ -37,7 +37,7 @@ export const OrderForm = ({ order }: OrderFormProps) => {
         }),
     };
 
-    const translatedItems = PaymentMethods.map(el => ({ ...el, value: checkMethod(el.value) }));
+    const translatedItems = PaymentMethods.map((el) => ({ ...el, value: checkMethod(el.value) }));
 
     const selectMethod = (id: number) => setPaymentMethod(PaymentMethods[id]);
 

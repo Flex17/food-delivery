@@ -1,7 +1,7 @@
-import { useAddProduct } from "../api/useAddProduct.ts";
 import { Button } from "shared/ui";
 import { useTranslation } from "react-i18next";
 import { ICartProduct } from "entities/product";
+import { useAddProduct } from "../api/useAddProduct.ts";
 
 interface AddProductButtonProps {
     product: ICartProduct;

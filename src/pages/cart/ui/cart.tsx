@@ -7,12 +7,12 @@ import { authSlice } from "entities/auth";
 import { CartProductCard } from "widgets/cart-product-card";
 import { DeleteProductButton } from "features/delete-product";
 import { ProductQuantityControls } from "widgets/product-quantity-controls";
-import css from "./cart.module.scss";
 import { OrderForm } from "widgets/order-form";
 import { useMakeOrder } from "features/make-order/api/useMakeOrder.ts";
 import { Navigate } from "react-router-dom";
 import { RemoveProductButton } from "features/remove-product";
 import { IncreaseProductQuantityButton } from "features/increase-product-quantity";
+import css from "./cart.module.scss";
 
 const Cart = () => {
     const { t } = useTranslation();
@@ -20,7 +20,9 @@ const Cart = () => {
     const localId = useAppSelector(authSlice.selectors.localId);
 
     const { data: products } = cartAPI.useGetCartQuery({ localId });
-    const { isCartLoading, isOrderLoading, onOrder, cartData, orderResponse } = useMakeOrder();
+    const {
+        isCartLoading, isOrderLoading, onOrder, cartData, orderResponse,
+    } = useMakeOrder();
 
     if (isOrderLoading || isCartLoading) {
         return <Loader />;
@@ -38,7 +40,7 @@ const Cart = () => {
         <div className={css.wrapper}>
             <Title>{t("cart.title")}</Title>
             <CartList>
-                {products?.map(product => (
+                {products?.map((product) => (
                     <CartProductCard
                         key={product.id}
                         data={product}

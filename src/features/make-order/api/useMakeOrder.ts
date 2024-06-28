@@ -15,9 +15,10 @@ export const useMakeOrder = () => {
 
     const { data: cartData, isLoading: isCartLoading } = cartAPI.useGetCartQuery({ localId });
 
-    const cost = useMemo(() => {
-        return cartData?.reduce((total, { quantity, product }) => total + product.price * quantity, 0);
-    }, [cartData]);
+    const cost = useMemo(
+        () => cartData?.reduce((total, { quantity, product }) => total + product.price * quantity, 0),
+        [cartData]
+    );
 
     const onOrder = async (address: string, paymentMethod: PaymentMethodT) => {
         try {
@@ -36,5 +37,11 @@ export const useMakeOrder = () => {
         }
     };
 
-    return { onOrder, cartData, isCartLoading, orderResponse, isOrderLoading };
+    return {
+        onOrder,
+        cartData,
+        isCartLoading,
+        orderResponse,
+        isOrderLoading,
+    };
 };

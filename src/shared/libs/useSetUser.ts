@@ -5,7 +5,9 @@ import { IRegistrationResponse } from "entities/auth/api/types.ts";
 export const useSetUser = () => {
     const dispatch = useAppDispatch();
 
-    const setUser = ({ idToken, displayName, email, refreshToken }: IRegistrationResponse) => {
+    const setUser = ({
+        idToken, displayName, email, refreshToken,
+    }: IRegistrationResponse) => {
         localStorage.setItem("access_token", idToken);
         localStorage.setItem("refresh_token", refreshToken);
 
@@ -14,7 +16,7 @@ export const useSetUser = () => {
             authSlice.actions.setUser({
                 email,
                 displayName,
-            })
+            }),
         );
     };
 

@@ -5,7 +5,7 @@ export const useDynamicPagination = <T>(
     total: number,
     fetchFunc: () => Promise<T[]>,
     increaseStartAt: () => void,
-    increaseEnd: () => void
+    increaseEnd: () => void,
 ) => {
     const isMounted = useRef(false);
 

@@ -2,9 +2,9 @@
 @use "/src/app/styles/mixins";
 
 .wrapper {
-  padding: 10px;
-  cursor: pointer;
-  border-bottom: 2px solid variables.$main_green;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid variables.$main_green;
 
-  @include mixins.flex-between();
+    @include mixins.flex-between;
 }

@@ -5,10 +5,8 @@ interface LoaderProps {
     className?: string;
 }
 
-export const Loader = ({ className }: LoaderProps) => {
-    return (
-        <div className={classNames("", {}, [className])}>
-            <TailSpin visible={true} height={80} width={80} color="#3F9E37" />
-        </div>
-    );
-};
+export const Loader = ({ className }: LoaderProps) => (
+    <div className={classNames("", {}, [className])}>
+        <TailSpin visible height={80} width={80} color="#3F9E37" />
+    </div>
+);

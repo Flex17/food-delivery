@@ -1,6 +1,6 @@
 import { Input, MainInputProps } from "shared/ui/input/input.tsx";
-import React, { useState } from "react";
 import { UseFormRegister } from "react-hook-form";
+import React, { useState } from "react";
 import { ReactComponent as VisibleIcon } from "./icons/visible.svg";
 import { ReactComponent as InvisibleIcon } from "./icons/invisible.svg";
 import css from "./password-input.module.scss";

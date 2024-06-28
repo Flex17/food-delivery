@@ -1,21 +1,22 @@
 @use "/src/app/styles/variables";
 
 .controls_wrapper {
-  justify-content: space-between;
-  gap: 20px;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .count {
-  border: 2px solid variables.$main_green;
-  width: 45px;
-  height: 45px;
-  border-radius: 10px;
-  justify-content: center;
-  font-weight: 600;
-  color: variables.$text_color;
+    border: 2px solid variables.$main_green;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    justify-content: center;
+    font-weight: 600;
+    color: variables.$text_color;
 }
 
-.controls_wrapper, .count {
-  display: flex;
-  align-items: center;
+.controls_wrapper,
+.count {
+    display: flex;
+    align-items: center;
 }

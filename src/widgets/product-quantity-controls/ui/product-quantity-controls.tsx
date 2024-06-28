@@ -7,14 +7,12 @@ interface ProductQuantityControlsProps {
     children: React.ReactNode;
 }
 
-export const ProductQuantityControls = ({ descrease, increase, children }: ProductQuantityControlsProps) => {
-    return (
-        <div className={css.controls_wrapper}>
-            {descrease}
-            <div className={css.count}>
-                <span>{children}</span>
-            </div>
-            {increase}
+export const ProductQuantityControls = ({ descrease, increase, children }: ProductQuantityControlsProps) => (
+    <div className={css.controls_wrapper}>
+        {descrease}
+        <div className={css.count}>
+            <span>{children}</span>
         </div>
-    );
-};
+        {increase}
+    </div>
+);

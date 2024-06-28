@@ -58,7 +58,9 @@ export const authAPI = createApi({
                         })
                     );
                     dispatch(authSlice.actions.setLocalId(result.data.users[0].localId));
-                } catch (e) {}
+                } catch (e) {
+                    console.log(e);
+                }
             },
         }),
     }),

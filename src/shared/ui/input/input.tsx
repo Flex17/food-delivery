@@ -9,13 +9,13 @@ export interface MainInputProps extends React.InputHTMLAttributes<HTMLInputEleme
 }
 
 export const Input = React.forwardRef<HTMLInputElement, MainInputProps & ReturnType<UseFormRegister<any>>>(
-    ({ placeholder, required, className, description, children, ...props }, ref) => {
-        return (
-            <div className={cx(className, css.wrapper)}>
-                <input placeholder={placeholder} {...props} className={cx(css.input)} ref={ref} />
-                <span className={css.description}>{description}</span>
-                {children}
-            </div>
-        );
-    }
+    ({
+        placeholder, required, className, description, children, ...props
+    }, ref) => (
+        <div className={cx(className, css.wrapper)}>
+            <input placeholder={placeholder} {...props} className={cx(css.input)} ref={ref} />
+            <span className={css.description}>{description}</span>
+            {children}
+        </div>
+    ),
 );

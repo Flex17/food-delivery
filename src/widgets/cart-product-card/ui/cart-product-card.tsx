@@ -14,7 +14,9 @@ export const CartProductCard = ({ data, removeProduct, children }: CartProductCa
 
     const { quantity, product } = data;
 
-    const { img, name, price, description } = product;
+    const {
+        img, name, price, description,
+    } = product;
 
     return (
         <div className={css.wrapper}>
@@ -24,10 +26,18 @@ export const CartProductCard = ({ data, removeProduct, children }: CartProductCa
                 <p className={css.description}>{description}</p>
                 <div className={css.price_container}>
                     <div className={css.price_block}>
-                        {t("history.card.price")}: {price} ₽
+                        {t("history.card.price")}
+                        :
+                        {price}
+                        {" "}
+                        ₽
                     </div>
                     <div className={css.price_block}>
-                        {t("history.card.cost")}: {price * quantity} ₽
+                        {t("history.card.cost")}
+                        :
+                        {price * quantity}
+                        {" "}
+                        ₽
                     </div>
                 </div>
             </div>

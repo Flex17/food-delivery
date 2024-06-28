@@ -1,18 +1,18 @@
 @use "/src/app/styles/mixins";
 
 .product {
-  align-items: stretch;
-  gap: 20px;
-  display: flex;
+    align-items: stretch;
+    gap: 20px;
+    display: flex;
 }
 
 .product_info {
-  flex-direction: column;
+    flex-direction: column;
 
-  @include mixins.flex-between-start();
+    @include mixins.flex-between-start;
 }
 
 .picture {
-  width: 120px;
-  border-radius: 50%;
+    width: 120px;
+    border-radius: 50%;
 }

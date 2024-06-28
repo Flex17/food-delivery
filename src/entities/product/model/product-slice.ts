@@ -1,5 +1,5 @@
-import { IProduct, IProductsState } from "./types.ts";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IProduct, IProductsState } from "./types.ts";
 
 const initialState: IProductsState = {
     total: 0,
@@ -12,8 +12,8 @@ export const productsSlice = createSlice({
     name: "products",
     initialState,
     selectors: {
-        products: state => state.products,
-        total: state => state.total,
+        products: (state) => state.products,
+        total: (state) => state.total,
     },
     reducers: {
         setProducts(state, action: PayloadAction<IProduct[]>) {
@@ -23,10 +23,10 @@ export const productsSlice = createSlice({
             state.total = action.payload;
         },
         increaseStartAt(state, action: PayloadAction<number>) {
-            state.startAt = state.startAt + action.payload;
+            state.startAt += action.payload;
         },
         increaseEndAt(state, action: PayloadAction<number>) {
-            state.endAt = state.endAt + action.payload;
+            state.endAt += action.payload;
         },
     },
 });

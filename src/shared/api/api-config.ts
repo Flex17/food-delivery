@@ -11,24 +11,22 @@ import { QueryReturnValue } from "shared/api/types.ts";
 
 export const providesList = <R extends { id: string | number }[], T extends string>(
     resultsWithIds: R | undefined,
-    tagType: T
-) => {
-    return resultsWithIds
+    tagType: T,
+) => (resultsWithIds
         ? [
-              ...resultsWithIds.map(({ id }) => ({
-                  type: tagType,
-                  id,
-              })),
-          ]
-        : [tagType];
-};
+            ...resultsWithIds.map(({ id }) => ({
+                type: tagType,
+                id,
+            })),
+        ]
+        : [tagType]);
 
 export const baseQuery = fetchBaseQuery({
     baseUrl: "https://delivery-food-db-default-rtdb.firebaseio.com",
-    paramsSerializer: params => {
+    paramsSerializer: (params) => {
         const accessToken = localStorage.getItem("access_token");
 
-        return Object.entries(Object.assign({}, params, { auth: accessToken }))
+        return Object.entries({ ...params, auth: accessToken })
             .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
             .join("&");
     },
@@ -47,7 +45,7 @@ const reauth = async (
     // * Пришлось добавить этот параметр, так как при загрузке приложения делается запрос на данные пользователя
     // * И, если токен устарел, то этот запрос кидает 400 код, хотя остальные кидают 401
     // * Пришлось решить это таким образом
-    auth?: boolean
+    auth?: boolean,
 ) => {
     if (result.error && ((auth && result.error.status === 400) || (!auth && result.error.status === 401))) {
         const refreshToken = localStorage.getItem("refresh_token");
@@ -65,7 +63,7 @@ const reauth = async (
                 },
             },
             api,
-            extraOptions
+            extraOptions,
         );
 
         if (refreshResult.data) {
@@ -87,19 +85,17 @@ const reauth = async (
 
 export const authBaseQuery = fetchBaseQuery({
     baseUrl: "https://identitytoolkit.googleapis.com/v1/",
-    paramsSerializer: params => {
-        return Object.entries(Object.assign({}, params, { key: import.meta.env.VITE_API_KEY }))
-            .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-            .join("&");
-    },
+    paramsSerializer: (params) => Object.entries({ ...params, key: import.meta.env.VITE_API_KEY })
+        .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+        .join("&"),
 });
 
 export const authBaseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = async (
     args,
     api,
-    extraOptions
+    extraOptions,
 ) => {
-    let result = await authBaseQuery(args, api, extraOptions);
+    const result = await authBaseQuery(args, api, extraOptions);
 
     return reauth(result, args, api, extraOptions, true);
 };
@@ -107,9 +103,9 @@ export const authBaseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, F
 export const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = async (
     args,
     api,
-    extraOptions
+    extraOptions,
 ) => {
-    let result = await baseQuery(args, api, extraOptions);
+    const result = await baseQuery(args, api, extraOptions);
 
     return reauth(result, args, api, extraOptions);
 };

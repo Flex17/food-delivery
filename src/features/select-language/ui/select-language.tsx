@@ -19,17 +19,16 @@ export const SelectLanguage = () => {
 
     return (
         <div className={css.wrapper}>
-            {languages.map(({ lang, code }) => {
-                return (
-                    <button
-                        className={code === i18n.language ? css.selected : ""}
-                        onClick={() => changeLanguage(code)}
-                        key={code}
-                    >
-                        {lang}
-                    </button>
-                );
-            })}
+            {languages.map(({ lang, code }) => (
+                <button
+                    type="button"
+                    className={code === i18n.language ? css.selected : ""}
+                    onClick={() => changeLanguage(code)}
+                    key={code}
+                >
+                    {lang}
+                </button>
+            ))}
         </div>
     );
 };
