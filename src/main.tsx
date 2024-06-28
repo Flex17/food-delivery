@@ -7,15 +7,18 @@ import { store } from "app/redux/store.ts";
 import "./i18n";
 import { injectStyle } from "react-toastify/inject-style";
 import App from "app/app.tsx";
+import { ErrorBoundary } from "app/providers/error-boundary";
 
 injectStyle();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <Provider store={store}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </Provider>
-    </React.StrictMode>,
+        <ErrorBoundary>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </Provider>
+        </ErrorBoundary>
+    </React.StrictMode>
 );
