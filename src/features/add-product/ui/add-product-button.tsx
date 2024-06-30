@@ -15,8 +15,8 @@ export const AddProductButton = ({ product }: AddProductButtonProps) => {
     const addProduct = async () => onAdd(product);
 
     return (
-        <Button type="button" onClick={addProduct} state={requestData.isLoading ? "disabled" : "default"}>
-            {t("productCard.toCart")}
+        <Button type="button" onClick={addProduct} disabled={requestData.isLoading}>
+            {t("Добавить в корзину")}
         </Button>
     );
 };

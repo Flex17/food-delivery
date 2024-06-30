@@ -2,15 +2,16 @@ import { useTranslation } from "react-i18next";
 import { PaymentMethodT } from "widgets/order-form/model/payment-data.ts";
 
 export const useHandlePaymentTranslation = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("cart");
 
     const checkMethod = (method: PaymentMethodT | null) => {
         if (method === "Наличными") {
-            return t("cart.form.method.cash");
-        } if (method === "По карте") {
-            return t("cart.form.method.byCard");
+            return t("Наличными");
         }
-        return t("cart.form.method.notSelected");
+        if (method === "По карте") {
+            return t("По карте");
+        }
+        return t("Оплата по");
     };
 
     return {

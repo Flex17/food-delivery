@@ -6,15 +6,15 @@ import css from "./change-auth-method.module.scss";
 
 const generateLinkAndText = (
     pathname: string,
-    t: TFunction<"translation", undefined>,
+    t: TFunction<"translation", undefined>
 ): { link: string; text: string } => {
     const link = pathname.includes(PublicRouterPath.registration)
         ? PublicRouterPath.authorization
         : PublicRouterPath.registration;
 
     const text = pathname.includes(PublicRouterPath.registration)
-        ? t("registration.haveAccount")
-        : t("authorization.haveAccount");
+        ? t("Есть аккаунт? Войдите")
+        : t("Нет аккаунта? Зарегистрироваться");
 
     return {
         link,
@@ -23,7 +23,7 @@ const generateLinkAndText = (
 };
 
 export const ChangeAuthMethod = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("authorization");
 
     const { pathname } = useLocation();
 

@@ -11,26 +11,24 @@ export const OrdersProductCard = ({ data }: OrdersProductCardProps) => {
 
     const { product, quantity } = data;
 
-    const {
-        name, id, img, price,
-    } = product;
+    const { name, id, img, price } = product;
 
     return (
         <div className={css.product} key={id}>
             <img className={css.picture} src={img} alt={name} />
             <div className={css.product_info}>
                 <div>
-                    {t("history.card.name")}
+                    {t("Название")}
                     :
                     {name}
                 </div>
                 <div>
-                    {t("history.card.price")}
+                    {t("Цена")}
                     :
                     {price}
                 </div>
                 <div>
-                    {t("history.card.quantity")}
+                    {t("Количество")}
                     :
                     {quantity}
                 </div>

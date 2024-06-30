@@ -4,7 +4,7 @@ import { authAPI } from "entities/auth/api/api.ts";
 import { useFormOptions, useSetUser } from "shared/libs";
 import { RegisterOptions, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { IAuthorizationForm } from "widgets/authorization-form/ui/authorization-form.tsx";
+import { IAuthorizationForm } from "widgets/authorization-form";
 
 export const useAuthorize = () => {
     const navigate = useNavigate();
@@ -32,7 +32,7 @@ export const useAuthorize = () => {
     const passwordRegister = {
         ...register("password", passwordInputOptions as RegisterOptions<IAuthorizationForm>),
     };
-    const onAuthorization: SubmitHandler<IAuthorizationForm> = async (data) => {
+    const onAuthorization: SubmitHandler<IAuthorizationForm> = async data => {
         try {
             const userData = await authorization(data).unwrap();
             setUser({ ...userData });

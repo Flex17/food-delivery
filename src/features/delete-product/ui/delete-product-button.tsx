@@ -10,7 +10,7 @@ interface DeleteProductButtonProps {
 }
 
 export const DeleteProductButton = ({ product }: DeleteProductButtonProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("cart");
 
     const { onDelete, requestData } = useDeleteProduct();
 
@@ -22,9 +22,8 @@ export const DeleteProductButton = ({ product }: DeleteProductButtonProps) => {
             onClick={deleteProduct}
             disabled={requestData.isLoading}
             styles={cx(css.btn, requestData.isLoading && css.disabled)}
-            state="default"
         >
-            {t("cart.form.delete")}
+            {t("Удалить")}
         </Button>
     );
 };

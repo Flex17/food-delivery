@@ -9,40 +9,38 @@ interface OrdersOrderCardProps {
 }
 
 export const OrdersOrderCard = ({ order, children }: OrdersOrderCardProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("history");
 
-    const {
-        totalPrice, paymentMethod, address, id,
-    } = order;
+    const { totalPrice, paymentMethod, address, id } = order;
 
     return (
         <div className={css.wrapper}>
             <div className={css.main_info}>
                 <span className={css.num}>
-                    {t("history.card.orderNumber")}
+                    {t("Номер заказа")}
                     : #
                     {id}
                 </span>
                 <span>
-                    {t("history.card.cost")}
+                    {t("Стоимость")}
                     :
                     {totalPrice}
                     {" "}
                     ₽
                 </span>
                 <span>
-                    {t("history.card.address")}
+                    {t("Адрес")}
                     :
                     {address}
                 </span>
                 <span>
-                    {t("history.card.payment")}
+                    {t("Способ оплаты")}
                     :
                     {paymentMethod}
                 </span>
             </div>
             <span>
-                {t("history.card.products")}
+                {t("Продукты")}
                 :
             </span>
             <div className={css.products}>{children}</div>

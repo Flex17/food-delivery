@@ -8,8 +8,8 @@ export const LogoutButton = () => {
     const logout = useLogout();
 
     return (
-        <Button state="default" onClick={logout} type="button" styles={css.button}>
-            {t("menu.logout")}
+        <Button onClick={logout} type="button" styles={css.button}>
+            {t("Выйти")}
         </Button>
     );
 };

@@ -1,5 +1,5 @@
 export { Loader } from "shared/ui/loader/Loader.tsx";
-export { Button } from "./button/button.tsx";
+export { Button } from "./button/Button.tsx";
 export { Title } from "./title/title.tsx";
 export { Input } from "./input/input.tsx";
 export { PasswordInput } from "./password-input/password-input.tsx";

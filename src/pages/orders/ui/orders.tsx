@@ -9,7 +9,7 @@ import { OrdersProductCard } from "widgets/orders-product-card";
 import css from "./orders.module.scss";
 
 const Orders = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("history");
 
     const localId = useAppSelector(authSlice.selectors.localId);
 
@@ -20,16 +20,16 @@ const Orders = () => {
     }
 
     if (!orders?.length) {
-        return <InfoText>{t("history.noOrders")}</InfoText>;
+        return <InfoText>{t("Заказов не найдено")}</InfoText>;
     }
 
     return (
         <div className={css.wrapper}>
-            <Title>{t("history.title")}</Title>
+            <Title>{t("Ваши заказы")}</Title>
             <OrdersList>
-                {[...orders].reverse().map((order) => (
+                {[...orders].reverse().map(order => (
                     <OrdersOrderCard key={order.id} order={order}>
-                        {order.products.map((product) => (
+                        {order.products.map(product => (
                             <OrdersProductCard key={product.id} data={product} />
                         ))}
                     </OrdersOrderCard>

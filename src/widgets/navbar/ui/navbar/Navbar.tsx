@@ -20,8 +20,8 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <div className={css.nav_block}>
                     <Logo />
                     <ul className={css.nav_items}>
-                        <NavItem to={PrivateRouterPath.menu}>{t("navbar.menu")}</NavItem>
-                        <NavItem to={PrivateRouterPath.orders}>{t("navbar.orders")}</NavItem>
+                        <NavItem to={PrivateRouterPath.menu}>{t("Меню")}</NavItem>
+                        <NavItem to={PrivateRouterPath.orders}>{t("Заказы")}</NavItem>
                     </ul>
                 </div>
                 <NavLink to="/cart">

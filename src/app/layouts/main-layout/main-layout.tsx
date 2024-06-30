@@ -7,12 +7,10 @@ import css from "./main-layout.module.scss";
 export const MainLayout = ({ children }: { children: React.ReactNode }) => (
     <>
         <Navbar />
-        <main className="wrapper">
-            <div className={css.controls_wrapper}>
-                <SelectLanguage />
-                <LogoutButton />
-            </div>
-            {children}
-        </main>
+        <main className="wrapper">{children}</main>
+        <div className={css.controls_wrapper}>
+            <LogoutButton />
+            <SelectLanguage />
+        </div>
     </>
 );

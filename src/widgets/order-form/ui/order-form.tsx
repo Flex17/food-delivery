@@ -15,7 +15,7 @@ interface OrderFormProps {
 }
 
 export const OrderForm = ({ order }: OrderFormProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("cart");
 
     const [paymentMethod, setPaymentMethod] = useState<IPaymentMethod | null>(null);
 
@@ -37,7 +37,7 @@ export const OrderForm = ({ order }: OrderFormProps) => {
         }),
     };
 
-    const translatedItems = PaymentMethods.map((el) => ({ ...el, value: checkMethod(el.value) }));
+    const translatedItems = PaymentMethods.map(el => ({ ...el, value: checkMethod(el.value) }));
 
     const selectMethod = (id: number) => setPaymentMethod(PaymentMethods[id]);
 
@@ -49,11 +49,11 @@ export const OrderForm = ({ order }: OrderFormProps) => {
 
     return (
         <form className={css.wrapper} onSubmit={handleSubmit(onOrder)}>
-            <h2 className={css.title}>{t("cart.form.title")}</h2>
-            <Input className={css.input} placeholder={t("cart.form.address")} {...addressRegister} />
+            <h2 className={css.title}>{t("Заполните форму заказа")}</h2>
+            <Input className={css.input} placeholder={t("Введите ваш адрес")} {...addressRegister} />
             <Dropdown currentItem={currentItem} items={translatedItems} setCurrentItem={selectMethod} />
-            <Button styles={css.btn} type="submit" state={isValid && paymentMethod ? "default" : "disabled"}>
-                {t("cart.form.order")}
+            <Button styles={css.btn} type="submit" disabled={!isValid || !paymentMethod}>
+                {t("Заказать")}
             </Button>
         </form>
     );

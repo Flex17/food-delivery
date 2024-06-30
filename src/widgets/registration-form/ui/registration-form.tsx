@@ -1,7 +1,4 @@
-import {
-    AuthenticationFormWrapper, Button, Input, Title,
-    PasswordInput,
-} from "shared/ui";
+import { AuthenticationFormWrapper, Button, Input, PasswordInput, Title } from "shared/ui";
 import { emailPlaceholder } from "shared/libs/useFormOptions.ts";
 import { useRegister } from "widgets/registration-form/api/useRegister.ts";
 import { useTranslation } from "react-i18next";
@@ -16,19 +13,17 @@ export interface IRegistrationForm {
 }
 
 export const RegistrationForm = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("authorization");
 
-    const {
-        isValid, passwordRegister, emailRegister, nameRegister, errors, onSubmit, requestData,
-    } = useRegister();
+    const { isValid, passwordRegister, emailRegister, nameRegister, errors, onSubmit, requestData } = useRegister();
 
     return (
         <AuthenticationFormWrapper handleSubmit={onSubmit}>
-            <Title>{t("registration.title")}</Title>
+            <Title>{t("Регистрация")}</Title>
             <Input
                 className={css.input_wrapper}
                 {...nameRegister}
-                placeholder={t("form.namePlaceholder")}
+                placeholder={t("Введите ваше имя")}
                 description={errors.displayName?.message?.toString()}
             />
             <Input
@@ -40,11 +35,11 @@ export const RegistrationForm = () => {
             <PasswordInput
                 {...passwordRegister}
                 className={css.input_wrapper}
-                placeholder={t("form.passwordPlaceholder")}
+                placeholder={t("Введите ваш пароль")}
                 description={errors.password?.message}
             />
-            <Button type="submit" state={!isValid || requestData.isLoading ? "disabled" : "default"}>
-                {t("registration.btnText")}
+            <Button type="submit" disabled={!isValid || requestData.isLoading}>
+                {t("Зарегистрироваться")}
             </Button>
             <ChangeAuthMethod />
         </AuthenticationFormWrapper>

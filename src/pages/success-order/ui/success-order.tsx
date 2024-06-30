@@ -5,7 +5,7 @@ import { useAppSelector } from "app/redux/store.ts";
 import { authSlice } from "entities/auth";
 
 const SuccessOrder = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("thanks");
 
     const { id } = useParams();
 
@@ -16,15 +16,15 @@ const SuccessOrder = () => {
             <InfoText>
                 {name}
                 ,
-                {t("successOrder.thanks")}
+                {t("спасибо за заказ")}
             </InfoText>
             <InfoText>
-                {t("successOrder.order.first")}
+                {t("Ваш заказ")}
                 {" "}
                 #
                 {id}
                 {" "}
-                {t("successOrder.order.second")}
+                {t("успешно оформлен")}
             </InfoText>
         </>
     );

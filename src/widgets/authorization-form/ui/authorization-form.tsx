@@ -1,7 +1,4 @@
-import {
-    AuthenticationFormWrapper, Button, Input, Title,
-    PasswordInput,
-} from "shared/ui";
+import { AuthenticationFormWrapper, Button, Input, PasswordInput, Title } from "shared/ui";
 import { emailPlaceholder } from "shared/libs/useFormOptions.ts";
 import { useTranslation } from "react-i18next";
 import { ChangeAuthMethod } from "features/change-auth-method";
@@ -14,15 +11,13 @@ export interface IAuthorizationForm {
 }
 
 export const AuthorizationForm = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("authorization");
 
-    const {
-        passwordRegister, emailRegister, errors, isValid, onSubmit, requestData,
-    } = useAuthorize();
+    const { passwordRegister, emailRegister, errors, isValid, onSubmit, requestData } = useAuthorize();
 
     return (
         <AuthenticationFormWrapper handleSubmit={onSubmit}>
-            <Title>{t("authorization.title")}</Title>
+            <Title>{t("Вход")}</Title>
             <Input
                 className={css.input_wrapper}
                 {...emailRegister}
@@ -32,11 +27,11 @@ export const AuthorizationForm = () => {
             <PasswordInput
                 {...passwordRegister}
                 className={css.input_wrapper}
-                placeholder={t("form.passwordPlaceholder")}
+                placeholder={t("Введите ваш пароль")}
                 description={errors.password?.message}
             />
-            <Button type="submit" state={!isValid || requestData.isLoading ? "disabled" : "default"}>
-                {t("authorization.btnText")}
+            <Button type="submit" disabled={!isValid || requestData.isLoading}>
+                {t("Войти")}
             </Button>
             <ChangeAuthMethod />
         </AuthenticationFormWrapper>

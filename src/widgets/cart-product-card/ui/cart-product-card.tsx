@@ -10,13 +10,11 @@ interface CartProductCardProps {
 }
 
 export const CartProductCard = ({ data, removeProduct, children }: CartProductCardProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("cart");
 
     const { quantity, product } = data;
 
-    const {
-        img, name, price, description,
-    } = product;
+    const { img, name, price, description } = product;
 
     return (
         <div className={css.wrapper}>
@@ -26,14 +24,14 @@ export const CartProductCard = ({ data, removeProduct, children }: CartProductCa
                 <p className={css.description}>{description}</p>
                 <div className={css.price_container}>
                     <div className={css.price_block}>
-                        {t("history.card.price")}
+                        {t("Цена")}
                         :
                         {price}
                         {" "}
                         ₽
                     </div>
                     <div className={css.price_block}>
-                        {t("history.card.cost")}
+                        {t("Стоимость")}
                         :
                         {price * quantity}
                         {" "}

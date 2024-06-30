@@ -4,6 +4,12 @@
     "indentation": [
       4
     ],
+    "selector-class-pattern": [
+      "^([a-z][a-z0-9]*)(_+[a-z0-9]+)*$",
+      {
+        "message": "Expected class selector to be snake case"
+      }
+    ],
     "block-no-empty": true
   }
 }
