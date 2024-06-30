@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { SelectLanguage } from "features/select-language";
+import { LanguageSwitcher } from "widgets/language-switcher";
 import { PublicAppRouter } from "app/providers/router";
 import css from "./unauthorized.module.scss";
 
@@ -11,7 +11,7 @@ export const Unauthorized = () => {
     return (
         <>
             <div className={css.selector}>
-                <SelectLanguage />
+                <LanguageSwitcher />
             </div>
             <PublicAppRouter />
         </>

@@ -1,7 +1,7 @@
 import { Button } from "shared/ui";
 import { useTranslation } from "react-i18next";
 import { ICartProduct } from "entities/product";
-import cx from "classnames";
+import { ButtonTheme } from "shared/ui/button/Button.tsx";
 import { useDeleteProduct } from "../api/useDeleteProduct.ts";
 import css from "./delete-product-button.module.scss";
 
@@ -19,9 +19,10 @@ export const DeleteProductButton = ({ product }: DeleteProductButtonProps) => {
     return (
         <Button
             type="button"
+            theme={ButtonTheme.ERROR}
             onClick={deleteProduct}
             disabled={requestData.isLoading}
-            styles={cx(css.btn, requestData.isLoading && css.disabled)}
+            styles={css.btn}
         >
             {t("Удалить")}
         </Button>

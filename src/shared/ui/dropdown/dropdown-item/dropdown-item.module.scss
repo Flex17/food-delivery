@@ -4,7 +4,7 @@
 .wrapper {
     padding: 10px;
     cursor: pointer;
-    border-bottom: 2px solid variables.$main_green;
+    border-bottom: 2px solid variables.$main-green;
 
     @include mixins.flex-between;
 }

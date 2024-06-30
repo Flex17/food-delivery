@@ -7,7 +7,7 @@
 }
 
 .main {
-    border: 2px solid variables.$main_green;
+    border: 2px solid variables.$main-green;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
@@ -28,7 +28,7 @@
         position: absolute;
         background-color: variables.$white;
         z-index: 10;
-        border: 2px solid variables.$main_green;
+        border: 2px solid variables.$main-green;
         border-bottom: none;
     }
 }

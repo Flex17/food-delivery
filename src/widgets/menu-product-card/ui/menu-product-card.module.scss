@@ -17,7 +17,7 @@
 }
 
 .name {
-    color: variables.$dark_green;
+    color: variables.$dark-green;
     line-height: 1.2;
     margin: 10px 0;
 }
@@ -31,7 +31,7 @@
     width: 63px;
     height: 63px;
     border-radius: 50%;
-    background-color: variables.$main_green;
+    background-color: variables.$main-green;
 
     span {
         color: variables.$white;
@@ -40,7 +40,7 @@
 
 .description {
     font-size: 13px;
-    color: variables.$secondary_text_color;
+    color: variables.$secondary-text-color;
     margin: 0 0 10px;
 }
 

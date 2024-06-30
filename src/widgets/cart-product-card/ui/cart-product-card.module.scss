@@ -27,7 +27,7 @@
     }
 
     .title {
-        color: variables.$dark_green;
+        color: variables.$dark-green;
 
         @media (max-width: 1000px) {
             text-align: center;
@@ -35,7 +35,7 @@
     }
 
     .description {
-        color: variables.$secondary_text_color;
+        color: variables.$secondary-text-color;
 
         @media (max-width: 1000px) {
             text-align: center;
@@ -54,7 +54,7 @@
 
 .price_block {
     display: inline-flex;
-    border: 2px solid variables.$main_green;
+    border: 2px solid variables.$main-green;
     padding: 10px;
     border-radius: 10px;
 }

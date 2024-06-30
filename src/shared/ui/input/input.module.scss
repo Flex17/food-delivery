@@ -11,13 +11,13 @@
     border-radius: 5px;
     font-size: 16px;
     background-color: transparent;
-    color: variables.$text_color;
-    border: 2px solid variables.$main_green;
+    color: variables.$text-color;
+    border: 2px solid variables.$main-green;
 }
 
 .description {
     margin-top: 5px;
-    color: variables.$secondary_text_color;
+    color: variables.$secondary-text-color;
     font-size: 12px;
     font-weight: 600;
 }

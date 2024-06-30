@@ -6,13 +6,13 @@
 }
 
 .count {
-    border: 2px solid variables.$main_green;
+    border: 2px solid variables.$main-green;
     width: 45px;
     height: 45px;
     border-radius: 10px;
     justify-content: center;
     font-weight: 600;
-    color: variables.$text_color;
+    color: variables.$text-color;
 }
 
 .controls_wrapper,

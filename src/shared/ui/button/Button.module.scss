@@ -7,12 +7,60 @@
     border: none;
     color: white;
     transition: all 0.3s ease-in-out;
-
-    &:disabled {
-        background-color: variables.$light_green;
-    }
 }
 
 .default {
-    background-color: variables.$main_green;
+    background-color: variables.$main-green;
+
+    &:disabled {
+        background-color: variables.$light-green;
+    }
+}
+
+.error {
+    background-color: variables.$main-red;
+
+    &:disabled {
+        background-color: variables.$light-red;
+    }
+}
+
+.dark {
+    border: 2px solid variables.$dark-green;
+    background-color: variables.$light-green;
+    color: variables.$text-color;
+}
+
+.outline {
+    border: 2px solid variables.$light-green;
+    background-color: variables.$white;
+    color: variables.$dark-green;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        border: 2px solid variables.$main-green;
+    }
+}
+
+.size_m {
+    font-size: 15px;
+    padding: 5px 10px;
+}
+
+.size_l {
+    font-size: 17px;
+}
+
+.size_xl {
+    font-size: 35px;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.size_xl.rounded {
+    width: 50px;
+    height: 50px;
+    padding: 0;
 }
