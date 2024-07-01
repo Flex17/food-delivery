@@ -52,7 +52,7 @@ export const OrderForm = ({ order }: OrderFormProps) => {
             <h2 className={css.title}>{t("Заполните форму заказа")}</h2>
             <Input className={css.input} placeholder={t("Введите ваш адрес")} {...addressRegister} />
             <Dropdown currentItem={currentItem} items={translatedItems} setCurrentItem={selectMethod} />
-            <Button styles={css.btn} type="submit" disabled={!isValid || !paymentMethod}>
+            <Button className={css.btn} type="submit" disabled={!isValid || !paymentMethod}>
                 {t("Заказать")}
             </Button>
         </form>

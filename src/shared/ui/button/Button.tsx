@@ -15,9 +15,8 @@ export enum ButtonSize {
     XL = "size_xl",
 }
 
-interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className"> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
-    styles?: string;
     theme?: ButtonTheme;
     size?: ButtonSize;
     rounded?: boolean;
@@ -27,14 +26,14 @@ export const Button = ({
     theme = ButtonTheme.DEFAULT,
     size = ButtonSize.L,
     rounded = false,
-    styles,
+    className,
     children,
     ...props
 }: ButtonProps) => (
     <button
         type="button"
         {...props}
-        className={classNames(css.wrapper, { [css.rounded]: rounded }, [styles, css[theme], css[size]])}
+        className={classNames(css.wrapper, { [css.rounded]: rounded }, [className, css[theme], css[size]])}
     >
         {children}
     </button>

@@ -9,7 +9,7 @@ export const LogoutButton = () => {
     const logout = useLogout();
 
     return (
-        <Button theme={ButtonTheme.DARK} size={ButtonSize.M} onClick={logout} type="button" styles={css.button}>
+        <Button theme={ButtonTheme.DARK} size={ButtonSize.M} onClick={logout} type="button" className={css.button}>
             {t("Выйти")}
         </Button>
     );

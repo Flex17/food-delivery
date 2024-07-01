@@ -22,7 +22,7 @@ export const DeleteProductButton = ({ product }: DeleteProductButtonProps) => {
             theme={ButtonTheme.ERROR}
             onClick={deleteProduct}
             disabled={requestData.isLoading}
-            styles={css.btn}
+            className={css.btn}
         >
             {t("Удалить")}
         </Button>

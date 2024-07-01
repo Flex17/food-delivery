@@ -17,7 +17,7 @@ export const LanguageSwitcher = ({ className, short }: LanguageSwitcherProps) =>
 
     return (
         <Button
-            styles={classNames(css.wrapper, {}, [className])}
+            className={classNames(css.wrapper, {}, [className])}
             size={ButtonSize.M}
             theme={ButtonTheme.OUTLINE}
             type="button"
