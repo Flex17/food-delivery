@@ -1,5 +1,9 @@
 @use "/src/app/styles/variables";
 
+.nav_active {
+    border-bottom: 2px solid variables.$white;
+}
+
 .nav_item,
 .nav_active {
     color: variables.$white;
@@ -11,8 +15,4 @@
     &:hover {
         border-color: variables.$white;
     }
-}
-
-.nav_active {
-    border-bottom: 2px solid variables.$white;
 }

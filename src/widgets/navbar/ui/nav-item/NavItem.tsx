@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import css from "./nav-item.module.scss";
+import css from "./NavItem.module.scss";
 
 interface NavItemProps {
     to: string;

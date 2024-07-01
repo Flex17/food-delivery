@@ -1,7 +1,7 @@
 import { classNames } from "shared/libs";
 import { useTranslation } from "react-i18next";
 import { Logo } from "widgets/navbar/ui/logo/logo.tsx";
-import { NavItem } from "widgets/navbar/ui/nav-item/nav-item.tsx";
+import { NavItem } from "widgets/navbar/ui/nav-item/NavItem.tsx";
 import { PrivateRouterPath } from "shared/config/router/privateRouteConfig.tsx";
 import { ReactComponent as CartIcon } from "shared/assets/cart-icon.svg";
 import { NavLink } from "react-router-dom";

@@ -15,6 +15,11 @@
     @include mixins.flex-between;
 }
 
+.nav_block,
+.nav_items {
+    display: flex;
+}
+
 .nav_block {
     align-items: center;
 
@@ -23,11 +28,6 @@
         margin-left: 40px;
         list-style-type: none;
     }
-}
-
-.nav_block,
-.nav_items {
-    display: flex;
 }
 
 @media (max-width: 350px) {
