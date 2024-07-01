@@ -1,14 +1,14 @@
 import React from "react";
 import { IHistoryOrderData } from "entities/order/api/types.ts";
 import { useTranslation } from "react-i18next";
-import css from "./orders-order-card.module.scss";
+import css from "./OrderCard.module.scss";
 
 interface OrdersOrderCardProps {
     order: IHistoryOrderData;
     children: React.ReactNode;
 }
 
-export const OrdersOrderCard = ({ order, children }: OrdersOrderCardProps) => {
+export const OrderCard = ({ order, children }: OrdersOrderCardProps) => {
     const { t } = useTranslation("history");
 
     const { totalPrice, paymentMethod, address, id } = order;

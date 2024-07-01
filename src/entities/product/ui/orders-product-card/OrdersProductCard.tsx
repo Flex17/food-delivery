@@ -1,6 +1,6 @@
-import { IOrderProduct } from "entities/product/model/types.ts";
 import { useTranslation } from "react-i18next";
-import css from "./orders-product-card.module.scss";
+import { IOrderProduct } from "../../model/types.ts";
+import css from "./OrdersProductCard.module.scss";
 
 interface OrdersProductCardProps {
     data: IOrderProduct;

@@ -1,18 +1,18 @@
 import { ICartProduct } from "entities/product";
 import React from "react";
-import css from "./menu-product-card.module.scss";
+import { ProductQuantity } from "shared/ui";
+import css from "./MenuProductCard.module.scss";
 
 interface ProductCardProps {
     product: ICartProduct;
     addProduct: React.ReactNode;
-    children: React.ReactNode;
+    increase: React.ReactNode;
+    decrease: React.ReactNode;
 }
 
-export const MenuProductCard = ({ product, addProduct, children }: ProductCardProps) => {
+export const MenuProductCard = ({ product, addProduct, increase, decrease }: ProductCardProps) => {
     const { quantity, product: productData } = product;
-    const {
-        img, name, description, price,
-    } = productData;
+    const { img, name, description, price } = productData;
 
     return (
         <div className={css.wrapper}>
@@ -28,7 +28,15 @@ export const MenuProductCard = ({ product, addProduct, children }: ProductCardPr
             </div>
             <h4 className={css.name}>{name}</h4>
             <p className={css.description}>{description}</p>
-            {quantity > 0 ? children : addProduct}
+            {quantity > 0 ? (
+                <div className={css.controls_wrapper}>
+                    {decrease}
+                    <ProductQuantity quantity={quantity} />
+                    {increase}
+                </div>
+            ) : (
+                addProduct
+            )}
         </div>
     );
 };

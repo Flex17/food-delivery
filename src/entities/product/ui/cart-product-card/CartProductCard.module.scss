@@ -58,3 +58,9 @@
     padding: 10px;
     border-radius: 10px;
 }
+
+.controls_wrapper {
+    @include mixins.flex-between;
+
+    gap: 20px;
+}

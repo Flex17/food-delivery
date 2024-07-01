@@ -3,14 +3,13 @@ import { InfoText, Loader, Title } from "shared/ui";
 import { cartAPI } from "entities/cart/api/api.ts";
 import { useAppSelector } from "app/redux/store.ts";
 import { authSlice } from "entities/auth";
-import { CartProductCard } from "widgets/cart-product-card";
 import { DeleteProductButton } from "features/delete-product";
-import { ProductQuantityControls } from "widgets/product-quantity-controls";
 import { OrderForm } from "widgets/order-form";
 import { useMakeOrder } from "features/make-order/api/useMakeOrder.ts";
 import { Navigate } from "react-router-dom";
 import { RemoveProductButton } from "features/remove-product";
 import { IncreaseProductQuantityButton } from "features/increase-product-quantity";
+import { CartProductCard } from "entities/product";
 import { CartList } from "./cart-list/cart-list.tsx";
 import css from "./cart.module.scss";
 
@@ -42,15 +41,10 @@ const Cart = () => {
                     <CartProductCard
                         key={product.id}
                         data={product}
+                        decrease={<RemoveProductButton product={product} />}
+                        increase={<IncreaseProductQuantityButton product={product} />}
                         removeProduct={<DeleteProductButton product={product} />}
-                    >
-                        <ProductQuantityControls
-                            descrease={<RemoveProductButton product={product} />}
-                            increase={<IncreaseProductQuantityButton product={product} />}
-                        >
-                            {product.quantity}
-                        </ProductQuantityControls>
-                    </CartProductCard>
+                    />
                 ))}
             </CartList>
             <OrderForm order={onOrder} />
