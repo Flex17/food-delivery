@@ -14,12 +14,26 @@
 - react hook form
 - FSD
 - Jest
+- Storybook
 
 ### Для запуска проекта:
 
 - Склонировать проект
 - npm install
 - npm run dev
+
+### Для запуска линтеров:
+
+- npm run lint:ts
+- npm run lint:scss
+
+### Для запуска тестов:
+
+- npm run test:unit
+
+### Для запуска Storybook:
+
+- npm run storybook
 
 ### Дополнительная информация:
 
