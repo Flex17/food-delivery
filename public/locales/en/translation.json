@@ -4,5 +4,8 @@
   "Выйти": "Logout",
   "Меню": "Menu",
   "Заказы": "Orders",
-  "Добавить в корзину": "Add to cart"
+  "Добавить в корзину": "Add to cart",
+  "Для ввода доступны только буквы": "For input only letters",
+  "Ошибка при вводе e-mail": "Invalid e-mail",
+  "Ошибка при вводе пароля": "Invalid password"
 }

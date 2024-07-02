@@ -3,7 +3,7 @@ import { emailPlaceholder } from "shared/libs/useFormOptions.ts";
 import { useRegister } from "widgets/registration-form/api/useRegister.ts";
 import { useTranslation } from "react-i18next";
 import { ChangeAuthMethod } from "features/change-auth-method";
-import css from "./registration-form.module.scss";
+import css from "./RegistrationForm.module.scss";
 
 export interface IRegistrationForm {
     displayName: string;

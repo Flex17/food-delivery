@@ -4,7 +4,7 @@ import { authAPI } from "entities/auth/api/api.ts";
 import { useFormOptions } from "shared/libs/useFormOptions.ts";
 import { RegisterOptions, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { IRegistrationForm } from "widgets/registration-form/ui/registration-form.tsx";
+import { IRegistrationForm } from "widgets/registration-form/ui/RegistrationForm.tsx";
 import { useSetUser } from "shared/libs";
 
 export const useRegister = () => {

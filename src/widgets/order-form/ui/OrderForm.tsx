@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useHandlePaymentTranslation } from "widgets/order-form/libs/useHandlePaymentTranslation.ts";
 import { IPaymentMethod, PaymentMethods, PaymentMethodT } from "../model/payment-data.ts";
-import css from "./order-form.module.scss";
+import css from "./OrderForm.module.scss";
 
 interface IOrderForm {
     address: string;
