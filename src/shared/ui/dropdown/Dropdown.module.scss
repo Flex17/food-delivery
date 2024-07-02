@@ -8,10 +8,8 @@
 
 .main {
     border: 2px solid variables.$main-green;
-    border-bottom: none;
     cursor: pointer;
     padding: 10px 20px;
-    border-bottom: 2px solid variables.$main-green;
 
     @include mixins.flex-between;
 }
@@ -41,10 +39,15 @@
     transform: translateY(0%);
 }
 
-.visible, .invisible {
+.visible,
+.invisible {
     width: 100%;
 }
 
-.main, .block, .visible, .invisible, .wrapper {
+.main,
+.block,
+.visible,
+.invisible,
+.wrapper {
     transition: all 0.2s ease-out;
 }
