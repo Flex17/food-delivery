@@ -7,6 +7,6 @@ export { NavItem } from "widgets/navbar/ui/nav-item/NavItem.tsx";
 export { Logo } from "widgets/navbar/ui/logo/logo.tsx";
 export { InfoText } from "./info-text/info-text.tsx";
 export { Dropdown } from "./dropdown/Dropdown.tsx";
-export { QuantityButton } from "./quantity-button/quantity-button.tsx";
+export { QuantityButton } from "./quantity-button/QuantityButton.tsx";
 export { AuthenticationFormWrapper } from "./authentication-form-wrapper/authentication-form-wrapper.tsx";
 export { ProductQuantity } from "./product-quantity/ProductQuantity.tsx";
