@@ -86,7 +86,7 @@ const reauth = async (
 export const authBaseQuery = fetchBaseQuery({
     baseUrl: "https://identitytoolkit.googleapis.com/v1/",
     paramsSerializer: params => Object.entries({ ...params, key: import.meta.env.VITE_API_KEY })
-        .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+        .map(([key, value]) => `${key}=${encodeURIComponent(value || "")}`)
         .join("&"),
 });
 

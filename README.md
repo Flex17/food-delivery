@@ -13,6 +13,7 @@
 - react router dom
 - react hook form
 - FSD
+- Jest
 
 ### Для запуска проекта:
 
