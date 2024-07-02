@@ -1,42 +1,50 @@
 @use "/src/app/styles/variables";
 @use "/src/app/styles/mixins";
 
-.wrapper,
-.container {
+.wrapper {
     width: 100%;
+    position: relative;
 }
 
 .main {
     border: 2px solid variables.$main-green;
-    padding: 10px 20px;
+    border-bottom: none;
     cursor: pointer;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-bottom: 2px solid variables.$main-green;
 
     @include mixins.flex-between;
 }
 
 .main_opened {
-    border-bottom: none;
     border-radius: 5px 5px 0 0;
 }
 
-.hidden {
-    max-width: 100%;
-    position: relative;
-
-    .block {
-        position: absolute;
-        background-color: variables.$white;
-        z-index: 10;
-        border: 2px solid variables.$main-green;
-        border-bottom: none;
-    }
+.block {
+    width: 100%;
+    position: absolute;
+    background-color: variables.$white;
+    z-index: 10;
+    border: 2px solid variables.$main-green;
+    border-top: none;
+    border-bottom: none;
+    box-sizing: border-box;
 }
 
 .invisible {
-    display: none;
+    opacity: 0;
+    transform: translateY(-2%);
 }
 
 .visible {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.visible, .invisible {
     width: 100%;
+}
+
+.main, .block, .visible, .invisible, .wrapper {
+    transition: all 0.2s ease-out;
 }

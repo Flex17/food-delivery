@@ -3,7 +3,7 @@ import { emailPlaceholder } from "shared/libs/useFormOptions.ts";
 import { useTranslation } from "react-i18next";
 import { ChangeAuthMethod } from "features/change-auth-method";
 import { useAuthorize } from "../api/useAuthorize.ts";
-import css from "./authorization-form.module.scss";
+import css from "./AuthorizationForm.module.scss";
 
 export interface IAuthorizationForm {
     email: string;

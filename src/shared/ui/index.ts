@@ -1,11 +1,11 @@
 export { Loader } from "shared/ui/loader/Loader.tsx";
 export { Button } from "./button/Button.tsx";
-export { Title } from "./title/title.tsx";
-export { Input } from "./input/input.tsx";
-export { PasswordInput } from "./password-input/password-input.tsx";
+export { Title } from "./title/Title.tsx";
+export { Input } from "./input/Input.tsx";
+export { PasswordInput } from "./password-input/PasswordInput.tsx";
 export { NavItem } from "widgets/navbar/ui/nav-item/NavItem.tsx";
 export { Logo } from "widgets/navbar/ui/logo/logo.tsx";
-export { InfoText } from "./info-text/info-text.tsx";
+export { InfoText } from "./info-text/InfoText.tsx";
 export { Dropdown } from "./dropdown/Dropdown.tsx";
 export { QuantityButton } from "./quantity-button/QuantityButton.tsx";
 export { AuthenticationFormWrapper } from "./authentication-form-wrapper/authentication-form-wrapper.tsx";

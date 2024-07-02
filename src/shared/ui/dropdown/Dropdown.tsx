@@ -25,25 +25,38 @@ export const Dropdown = ({ className, setCurrentItem, items, currentItem, title 
     const ref = useOutsideClick(() => setIsOpen(false));
 
     return (
-        <div className={classNames(css.wrapper, {}, [className])}>
-            <div role="presentation" className={css.container} onClick={() => setIsOpen((prev) => !prev)} ref={ref}>
-                <div className={classNames(css.main, { [css.main_opened]: isOpen })} data-testid="open-close">
-                    <span>{currentItem ? currentItem.value : title}</span>
-                    {isOpen ? <OpenIcon data-testid="open-icon" /> : <CloseIcon data-testid="close-icon" />}
-                </div>
+        <div
+            ref={ref}
+            onClick={() => setIsOpen((prev) => !prev)}
+            className={classNames(css.wrapper, {}, [className])}
+        >
+            <div
+                data-testid="open-close"
+                className={classNames(css.main, { [css.main_opened]: isOpen })}
+            >
+                <span>{currentItem ? currentItem.value : title}</span>
+                {
+                    isOpen
+                        ? <OpenIcon data-testid="open-icon" />
+                        : <CloseIcon data-testid="close-icon" />
+                }
+            </div>
 
-                <div className={css.hidden} data-testid="hidden">
-                    <div className={classNames(css.block, { [css.visible]: isOpen, [css.invisible]: !isOpen })}>
-                        {items.map((item) => (
-                            <DropdownItem
-                                key={item.id}
-                                item={item}
-                                select={setCurrentItem}
-                                isActive={currentItem === item}
-                            />
-                        ))}
-                    </div>
-                </div>
+            <div
+                className={classNames(css.block, {
+                    [css.visible]: isOpen,
+                    [css.invisible]: !isOpen
+                })}
+                data-testid="hidden"
+            >
+                {items.map((item) => (
+                    <DropdownItem
+                        key={item.id}
+                        item={item}
+                        select={setCurrentItem}
+                        isActive={currentItem === item}
+                    />
+                ))}
             </div>
         </div>
     );

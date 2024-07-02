@@ -1,7 +1,7 @@
 import { RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { IRegistrationForm } from "widgets/registration-form/ui/registration-form.tsx";
-import { IAuthorizationForm } from "widgets/authorization-form/ui/authorization-form.tsx";
+import { IAuthorizationForm } from "widgets/authorization-form/ui/AuthorizationForm.tsx";
 
 export const emailPlaceholder = "yourmail@mail.ru";
 

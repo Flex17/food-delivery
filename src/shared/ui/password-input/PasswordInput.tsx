@@ -1,9 +1,9 @@
-import { Input, MainInputProps } from "shared/ui/input/input.tsx";
+import { Input, MainInputProps } from "shared/ui/input/Input.tsx";
 import { UseFormRegister } from "react-hook-form";
 import React, { useState } from "react";
 import { ReactComponent as VisibleIcon } from "./icons/visible.svg";
 import { ReactComponent as InvisibleIcon } from "./icons/invisible.svg";
-import css from "./password-input.module.scss";
+import css from "./PasswordInput.module.scss";
 
 export const PasswordInput = React.forwardRef<HTMLInputElement, MainInputProps & ReturnType<UseFormRegister<any>>>(
     ({ className, children, ...props }, ref) => {
