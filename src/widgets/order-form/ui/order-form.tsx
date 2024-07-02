@@ -43,7 +43,7 @@ export const OrderForm = ({ order }: OrderFormProps) => {
 
     const currentItem = paymentMethod
         ? { ...paymentMethod, value: checkMethod(paymentMethod!.value) }
-        : checkMethod(null);
+        : paymentMethod;
 
     const onOrder = async () => order(getValues("address"), paymentMethod!.value).then(() => reset());
 
@@ -51,7 +51,12 @@ export const OrderForm = ({ order }: OrderFormProps) => {
         <form className={css.wrapper} onSubmit={handleSubmit(onOrder)}>
             <h2 className={css.title}>{t("Заполните форму заказа")}</h2>
             <Input className={css.input} placeholder={t("Введите ваш адрес")} {...addressRegister} />
-            <Dropdown currentItem={currentItem} items={translatedItems} setCurrentItem={selectMethod} />
+            <Dropdown
+                title={t("Оплата по")}
+                currentItem={currentItem}
+                items={translatedItems}
+                setCurrentItem={selectMethod}
+            />
             <Button className={css.btn} type="submit" disabled={!isValid || !paymentMethod}>
                 {t("Заказать")}
             </Button>

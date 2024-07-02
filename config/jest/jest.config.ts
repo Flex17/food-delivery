@@ -50,7 +50,7 @@ const config: Config = {
 
     moduleNameMapper: {
         "\\.(s?css)$": "identity-obj-proxy",
-        "\\.svg": resolve(__dirname, "jestEmptyComponent.tsx"),
+        "\\.svg": resolve(__dirname, "__mocks__/svg.ts"),
         "\\.png": resolve(__dirname, "jestEmptyComponent.tsx"),
         "^app/(.*)$": "<rootDir>/src/app/$1",
         "^pages/(.*)$": "<rootDir>/src/pages/$1",

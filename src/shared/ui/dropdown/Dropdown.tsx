@@ -1,10 +1,10 @@
 import { useState } from "react";
-import cx from "classnames";
 import { useOutsideClick } from "shared/libs/useOutsideClick.ts";
-import { DropdownItem } from "./dropdown-item/dropdown-item.tsx";
+import { classNames } from "shared/libs";
+import { DropdownItem } from "./dropdown-item/DropdownItem.tsx";
 import { ReactComponent as OpenIcon } from "./icons/open.svg";
 import { ReactComponent as CloseIcon } from "./icons/close.svg";
-import css from "./dropdown.module.scss";
+import css from "./Dropdown.module.scss";
 
 export interface IDropdownItem {
     id: number;
@@ -12,28 +12,28 @@ export interface IDropdownItem {
 }
 
 interface DropdownProps {
-    currentItem: IDropdownItem | string;
+    title: string,
+    currentItem: IDropdownItem | null;
     setCurrentItem: (id: number) => void;
     items: IDropdownItem[];
+	className?: string,
 }
 
-export const Dropdown = ({ setCurrentItem, items, currentItem }: DropdownProps) => {
+export const Dropdown = ({ className, setCurrentItem, items, currentItem, title }: DropdownProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const ref = useOutsideClick(() => setIsOpen(false));
 
-    const currentItemValue = typeof currentItem !== "string" ? currentItem.value : currentItem;
-
     return (
-        <div className={css.wrapper}>
+        <div className={classNames(css.wrapper, {}, [className])}>
             <div role="presentation" className={css.container} onClick={() => setIsOpen((prev) => !prev)} ref={ref}>
-                <div className={cx(css.main, isOpen && css.main_opened)}>
-                    <span>{currentItemValue}</span>
-                    {isOpen ? <OpenIcon /> : <CloseIcon />}
+                <div className={classNames(css.main, { [css.main_opened]: isOpen })} data-testid="open-close">
+                    <span>{currentItem ? currentItem.value : title}</span>
+                    {isOpen ? <OpenIcon data-testid="open-icon" /> : <CloseIcon data-testid="close-icon" />}
                 </div>
 
-                <div className={css.hidden}>
-                    <div className={cx(isOpen ? css.visible : css.invisible, css.block)}>
+                <div className={css.hidden} data-testid="hidden">
+                    <div className={classNames(css.block, { [css.visible]: isOpen, [css.invisible]: !isOpen })}>
                         {items.map((item) => (
                             <DropdownItem
                                 key={item.id}
