@@ -1,1 +1,1 @@
-export { Registration } from "./registration.lazy.tsx";
+export { Registration } from "./Registration.lazy.tsx";

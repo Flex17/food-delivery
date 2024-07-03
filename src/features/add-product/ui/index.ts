@@ -1,1 +1,1 @@
-export { AddProductButton } from "./add-product-button.tsx";
+export { AddProductButton } from "./AddProductButton.tsx";

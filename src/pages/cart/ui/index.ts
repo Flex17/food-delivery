@@ -1,1 +1,1 @@
-export { Cart } from "./cart.lazy.tsx";
+export { Cart } from "./Cart.lazy.tsx";

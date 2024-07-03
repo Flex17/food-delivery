@@ -1,1 +1,1 @@
-export { NotFound } from "./not-found.lazy.tsx";
+export { NotFound } from "./NotFound.lazy.tsx";

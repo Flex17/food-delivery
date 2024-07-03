@@ -1,1 +1,1 @@
-export { Menu } from "./menu.lazy.tsx";
+export { Menu } from "./Menu.lazy.tsx";

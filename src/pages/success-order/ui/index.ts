@@ -1,1 +1,1 @@
-export { SuccessOrder } from "./success-order.lazy.tsx";
+export { SuccessOrder } from "./SuccessOrder.lazy.tsx";

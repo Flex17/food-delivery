@@ -7,5 +7,6 @@
   "Добавить в корзину": "Add to cart",
   "Для ввода доступны только буквы": "For input only letters",
   "Ошибка при вводе e-mail": "Invalid e-mail",
-  "Ошибка при вводе пароля": "Invalid password"
+  "Ошибка при вводе пароля": "Invalid password",
+  "Продуктов не найдено": "Products not found"
 }

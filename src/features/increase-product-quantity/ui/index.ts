@@ -1,1 +1,1 @@
-export { IncreaseProductQuantityButton } from "./increase-product-quantity-button.tsx";
+export { IncreaseProductQuantityButton } from "./IncreaseProductQuantityButton.tsx";

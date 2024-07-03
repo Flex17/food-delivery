@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
 import { TFunction } from "i18next";
 import { PublicRouterPath } from "shared/config/router/publicRoterConfig.tsx";
-import css from "./change-auth-method.module.scss";
+import css from "./ChangeAuthMethod.module.scss";
 
 const generateLinkAndText = (
     pathname: string,

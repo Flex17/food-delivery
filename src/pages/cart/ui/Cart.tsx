@@ -12,7 +12,7 @@ import { IncreaseProductQuantityButton } from "features/increase-product-quantit
 import { CartProductCard } from "entities/product";
 import { PageLoader } from "widgets/page-loader";
 import { CartList } from "./cart-list/cart-list.tsx";
-import css from "./cart.module.scss";
+import css from "./Cart.module.scss";
 
 const Cart = () => {
     const { t } = useTranslation("cart");

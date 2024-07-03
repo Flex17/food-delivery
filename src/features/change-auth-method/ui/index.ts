@@ -1,1 +1,1 @@
-export { ChangeAuthMethod } from "./change-auth-method.tsx";
+export { ChangeAuthMethod } from "./ChangeAuthMethod.tsx";

@@ -21,7 +21,7 @@ const Menu = () => {
     }
 
     if (!products.length && !isLoading) {
-        return <InfoText>{t("menu.noProducts")}</InfoText>;
+        return <InfoText>{t("Продуктов не найдено")}</InfoText>;
     }
 
     return (
