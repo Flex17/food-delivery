@@ -1,9 +1,10 @@
-import { InfoText, Loader, Title } from "shared/ui";
+import { InfoText, Title } from "shared/ui";
 import { OrderCard, ordersAPI } from "entities/order";
 import { useAppSelector } from "app/redux/store.ts";
 import { useTranslation } from "react-i18next";
 import { authSlice } from "entities/auth";
 import { OrdersProductCard } from "entities/product";
+import { PageLoader } from "widgets/page-loader";
 import { OrdersList } from "./orders-list/orders-list.tsx";
 import css from "./orders.module.scss";
 
@@ -15,7 +16,7 @@ const Orders = () => {
     const { data: orders, isLoading } = ordersAPI.useGetAllQuery({ localId });
 
     if (isLoading) {
-        return <Loader />;
+        return <PageLoader />;
     }
 
     if (!orders?.length) {

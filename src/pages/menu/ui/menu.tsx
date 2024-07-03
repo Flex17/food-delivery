@@ -2,10 +2,11 @@ import { useTranslation } from "react-i18next";
 import { useAppSelector } from "app/redux/store.ts";
 import { MenuProductCard, productsSlice } from "entities/product";
 import { useDynamicProducts } from "pages/menu/libs/useDynamicProducts.ts";
-import { InfoText, Loader } from "shared/ui";
+import { InfoText } from "shared/ui";
 import { AddProductButton } from "features/add-product";
 import { RemoveProductButton } from "features/remove-product";
 import { IncreaseProductQuantityButton } from "features/increase-product-quantity";
+import { PageLoader } from "widgets/page-loader";
 import { ProductList } from "./product-list/product-list.tsx";
 
 const Menu = () => {
@@ -16,7 +17,7 @@ const Menu = () => {
     const { preparedProducts, isLoading } = useDynamicProducts();
 
     if (isLoading && !products.length) {
-        return <Loader />;
+        return <PageLoader />;
     }
 
     if (!products.length && !isLoading) {

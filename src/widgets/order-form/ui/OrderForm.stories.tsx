@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { OrderForm } from "widgets/order-form";
+import { fn } from "@storybook/test";
 
 const meta = {
     title: "widgets/OrderForm",
@@ -12,6 +13,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        order: jest.fn()
+        order: fn()
     },
 };

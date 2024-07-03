@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { InfoText, Loader, Title } from "shared/ui";
+import { InfoText, Title } from "shared/ui";
 import { cartAPI } from "entities/cart/api/api.ts";
 import { useAppSelector } from "app/redux/store.ts";
 import { authSlice } from "entities/auth";
@@ -10,6 +10,7 @@ import { Navigate } from "react-router-dom";
 import { RemoveProductButton } from "features/remove-product";
 import { IncreaseProductQuantityButton } from "features/increase-product-quantity";
 import { CartProductCard } from "entities/product";
+import { PageLoader } from "widgets/page-loader";
 import { CartList } from "./cart-list/cart-list.tsx";
 import css from "./cart.module.scss";
 
@@ -22,7 +23,7 @@ const Cart = () => {
     const { isCartLoading, isOrderLoading, onOrder, cartData, orderResponse } = useMakeOrder();
 
     if (isOrderLoading || isCartLoading) {
-        return <Loader />;
+        return <PageLoader />;
     }
 
     if (orderResponse) {

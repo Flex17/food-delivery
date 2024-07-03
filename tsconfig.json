@@ -28,7 +28,8 @@
       "widgets/*": ["widgets/*"],
       "pages/*": ["pages/*"],
       "app/*": ["app/*"]
-    }
+    },
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
   "include": ["src", "./config/jest/setupTests.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

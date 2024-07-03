@@ -15,6 +15,7 @@
 - FSD
 - Jest
 - Storybook
+- Loki
 
 ### Для запуска проекта:
 
@@ -30,6 +31,7 @@
 ### Для запуска тестов:
 
 - npm run test:unit
+- npm run test:ui
 
 ### Для запуска Storybook:
 
